@@ -1,0 +1,2444 @@
+===== SWD - Lect1.pdf =====
+---Page 1---
+I T
+NTRODUCTION O
+S D
+OFTWARE EVELOPMENT
+Dr: BOSSY MOHAMED
+
+---Page 2---
+W S ?
+HAT IS A OFTWARE
+A collection of programs, data, and
+?
+instructions that tell a computer how
+to perform specific tasks.
+Unlike hardware, software is
+?
+intangible and can be modified,
+updated, and improved over time.
+
+---Page 3---
+T S
+YPES OF OFTWARE
+System Software
+?
+Controls and manages computer hardware.
+Examples:
+Microsoft Windows
+?
+Linux
+?
+macOS
+?
+Application Software
+?
+Designed for end users to perform specific tasks.
+Examples:
+Microsoft Word
+?
+Adobe Photoshop
+?
+
+---Page 4---
+T S
+YPES OF OFTWARE
+Programming Software
+?
+Tools used by developers to create software.
+Examples:
+Visual Studio
+?
+Eclipse
+?
+
+---Page 5---
+W S D ?
+HAT IS OFTWARE EVELOPMENT
+Is the structured process of:
+Identifying user needs
+?
+Designing software solutions
+?
+Writing source code
+?
+Testing the system
+?
+Deploying the software
+?
+Maintaining and updating it
+?
+It is also known as the Software
+Development Life Cycle (SDLC).
+
+---Page 6---
+S D L C
+OFTWARE EVELOPMENT IFE YCLE
+(SDLC)
+The SDLC provides a framework for building
+?
+high-quality software. The main phases include:
+Requirement Analysis
+?
+Gathering and documenting what the user or
+organization needs.
+System Design
+?
+Planning the architecture, database structure, and
+user interface.
+Implementation (Coding)
+?
+Writing the actual program using programming
+languages such as:
+Python
+?
+Java
+?
+C++
+?
+
+---Page 7---
+S D L C
+OFTWARE EVELOPMENT IFE YCLE
+(SDLC)
+Testing
+?
+Detecting and fixing errors (bugs) to ensure
+correctness and reliability.
+Deployment
+?
+Releasing the software to users.
+Maintenance
+?
+Updating, improving, and fixing issues after release.
+
+---Page 9---
+K R S
+EY OLES IN OFTWARE
+D
+EVELOPMENT
+Software Developer / Programmer ?
+?
+Writes code.
+System Analyst ? Analyzes user
+?
+requirements.
+Project Manager ? Manages timeline
+?
+and resources.
+Quality Assurance (QA) Engineer ?
+?
+Tests software.
+UI/UX Designer ? Designs user interface
+?
+and experience.
+
+---Page 10---
+I S
+MPORTANCE OF OFTWARE
+D
+EVELOPMENT
+Business automation
+?
+Healthcare systems
+?
+Banking and financial services
+?
+Education platforms
+?
+Mobile applications
+?
+Artificial Intelligence systems
+?
+Without software development,
+modern digital life would not exist.
+
+---Page 11---
+C G
+HARACTERISTICS OF OOD
+S
+OFTWARE
+Reliability
+?
+Efficiency
+?
+Security
+?
+Maintainability
+?
+Scalability
+?
+Usability
+?
+
+---Page 12---
+A W S
+REAS HERE OFTWARE
+D I U
+EVELOPMENT S SED
+Business and Enterprise Systems
+Organizations use software to manage
+?
+operations, finances, and employees.
+Enterprise Resource Planning (ERP)
+?
+Customer Relationship Management
+?
+(CRM)
+Accounting systems
+?
+Inventory management
+?
+
+---Page 13---
+A W S
+REAS HERE OFTWARE
+D I U
+EVELOPMENT S SED
+Healthcare
+Software improves patient care, hospital
+?
+management, and medical research.
+Electronic Health Records (EHR)
+?
+Medical imaging systems
+?
+Telemedicine platforms
+?
+Laboratory information systems
+?
+
+---Page 14---
+A W S
+REAS HERE OFTWARE
+D I U
+EVELOPMENT S SED
+Education
+Software supports learning, teaching, and
+?
+academic administration.
+E-learning platforms
+?
+Online exams
+?
+Student information systems
+?
+Virtual classrooms
+?
+
+---Page 15---
+A W S
+REAS HERE OFTWARE
+D I U
+EVELOPMENT S SED
+Banking and Finance
+Financial institutions rely heavily on
+?
+secure software systems.
+Online banking
+?
+Mobile payment applications
+?
+Stock trading systems
+?
+Fraud detection systems
+?
+
+---Page 16---
+A W S
+REAS HERE OFTWARE
+D I U
+EVELOPMENT S SED
+Mobile Applications
+Smart phones depend on apps built
+?
+through software development.
+Social media apps
+?
+Shopping apps
+?
+Health tracking apps
+?
+Ride-hailing services
+?
+
+---Page 17---
+A W S
+REAS HERE OFTWARE
+D I U
+EVELOPMENT S SED
+E-Commerce
+Online buying and selling platforms are
+?
+powered by software.
+Online stores
+?
+Payment gateways
+?
+Order tracking systems
+?
+
+---Page 18---
+A W S
+REAS HERE OFTWARE
+D I U
+EVELOPMENT S SED
+Government and Public Services
+Governments use software to manage
+services and citizen data.
+E-government portals
+?
+National ID systems
+?
+Tax systems
+?
+Traffic management systems
+?
+
+---Page 19---
+A W S
+REAS HERE OFTWARE
+D I U
+EVELOPMENT S SED
+Entertainment and Media
+Software is used in streaming, gaming,
+?
+and content creation.
+Video streaming platforms
+?
+Music streaming services
+?
+Video games
+?
+Animation and editing software
+?
+
+---Page 20---
+A W S
+REAS HERE OFTWARE
+D I U
+EVELOPMENT S SED
+Transportation and Logistics
+Software optimizes delivery systems and
+?
+vehicle management.
+GPS navigation
+?
+Fleet management systems
+?
+Airline reservation systems
+?
+
+---Page 21---
+A W S
+REAS HERE OFTWARE
+D I U
+EVELOPMENT S SED
+Artificial Intelligence and Machine
+Learning
+Advanced systems use software to
+?
+simulate intelligent behavior.
+Chatbots
+?
+Recommendation systems
+?
+Image recognition
+?
+Predictive analytics
+?
+
+---Page 22---
+A W S
+REAS HERE OFTWARE
+D I U
+EVELOPMENT S SED
+Manufacturing and Industry
+Software controls production and
+?
+automation systems.
+Robotics control
+?
+Supply chain systems
+?
+Quality control systems
+?
+
+---Page 23---
+A W S
+REAS HERE OFTWARE
+D I U
+EVELOPMENT S SED
+Cybersecurity
+Software protects systems from threats.
+?
+Antivirus programs
+?
+Firewalls
+?
+Encryption systems
+?
+
+
+===== SWD - Lect2.pdf =====
+---Page 1---
+I T
+NTRODUCTION O
+S D
+OFTWARE EVELOPMENT
+Dr: BOSSY MOHAMED
+
+---Page 2---
+S D L
+OFTWARE EVELOPMENT IFE
+C (SDLC)
+YCLE
+Is a structured process used by
+?
+software engineers and project
+managers to design, develop, test,
+and maintain high-quality software
+systems in a systematic and
+controlled way.
+
+---Page 3---
+I SDLC
+MPORTANCE OF
+High quality software
+?
+Clear documentation
+?
+Controlled costs
+?
+Timely delivery
+?
+Reduced risks
+?
+
+---Page 4---
+M P SDLC
+AIN HASES OF
+Planning
+Identify business objectives
+?
+Define project scope
+?
+Estimate cost, time, and resources
+?
+Conduct feasibility study (technical,
+?
+economic, operational)
+Output: Project Plan
+?
+
+---Page 5---
+M P SDLC
+AIN HASES OF
+Requirements Analysis
+Gather user requirements
+?
+Document functional & non-
+?
+functional requirements
+Communicate with stakeholders
+?
+Output: Software Requirements
+?
+Specification (SRS)
+
+---Page 6---
+M P SDLC
+AIN HASES OF
+System Design
+Create system architecture
+?
+Design database structure
+?
+Define user interface design
+?
+Choose technologies
+?
+Output: Design Document (HLD &
+?
+LLD)
+
+---Page 7---
+M P SDLC
+AIN HASES OF
+Implementation (Coding)
+Developers write code
+?
+Follow coding standards
+?
+Unit testing performed
+?
+Output: Source Code
+?
+
+---Page 8---
+M P SDLC
+AIN HASES OF
+Testing
+Verify system works correctly
+?
+Detect and fix bugs
+?
+Types of testing:
+?
+Unit Testing
+?
+Integration Testing
+?
+System Testing
+?
+User Acceptance Testing (UAT)
+?
+Output: Tested Software
+?
+
+---Page 9---
+M P SDLC
+AIN HASES OF
+Deployment
+Install system in real environment
+?
+Train users
+?
+Release product
+?
+
+---Page 10---
+M P SDLC
+AIN HASES OF
+Maintenance
+Fix bugs
+?
+Update features
+?
+Improve performance
+?
+Provide technical support
+?
+
+---Page 11---
+P SDLC M
+OPULAR ODELS
+Waterfall Model
+?
+Agile Model
+?
+Spiral Model
+?
+V-Model
+?
+
+---Page 12---
+W
+ATERFALL MODEL
+It follows a linear and sequential approach,
+?
+where each phase must be completed before
+moving to the next?like water flowing down a
+waterfall.
+
+---Page 13---
+W
+ATERFALL MODEL
+ADVANTAGES DISADVANTAGES
+? Simple and easy ? Not flexible to
+to understand changes
+? Clear structure ? Difficult to go
+and documentation back to previous
+? Well-defined phase
+stages and ? Testing happens
+milestones late
+? Works well for ? Not suitable for
+small projects with complex or changing
+fixed requirements projects
+
+---Page 14---
+A
+GILE MODEL
+Is an iterative and incremental approach
+?
+to software development that focuses on
+flexibility, collaboration, customer
+feedback, and continuous
+improvement.
+Unlike traditional models such as the
+?
+Waterfall model, Agile allows changes to
+requirements even late in development.
+
+---Page 15---
+A
+GILE MODEL
+
+---Page 16---
+A
+GILE MODEL
+ADVANTAGES DISADVANTAGES
+? Flexible to ? Requires
+changing experienced team
+requirements members
+? Faster delivery of ? Less
+usable software documentation
+? Better customer ? Hard to predict
+satisfaction final cost and
+? Improved product timeline
+quality ? Not suitable for
+? Early detection of very large or critical
+issues systems
+
+---Page 17---
+S
+PIRAL MODEL
+A risk-driven software development
+?
+model that combines elements of the
+Waterfall model and prototyping in an
+iterative
+framework.
+
+---Page 18---
+S
+PIRAL MODEL
+ADVANTAGES DISADVANTAGES
+? Early ? Expensive
+identification of risks ? Complex to
+? Suitable for large manage
+& high-risk projects ? Requires risk
+? Flexible to analysis expertise
+changes ? Not suitable for
+? Customer small projects
+feedback at every
+phase
+
+---Page 19---
+V-
+MODEL
+Where development and testing activities
+?
+run in parallel. It is an extension of the
+Waterfall model, but emphasizes testing
+at every stage.
+
+---Page 20---
+V-
+MODEL
+ADVANTAGES DISADVANTAGES
+? Early detection of ? Not flexible to
+defects requirement changes
+? Simple and easy ? No working
+to understand software until late
+? Good for small stages
+and medium projects ? Not suitable for
+? Clear milestones dynamic projects
+
+
+===== SWD - Lect3.pdf =====
+---Page 1---
+I T
+NTRODUCTION O
+S D
+OFTWARE EVELOPMENT
+Requirements
+Engineering
+Dr: BOSSY MOHAMED
+
+---Page 2---
+R E
+EQUIREMENTS NGINEERING
+Is a branch of software engineering
+?
+concerned with identifying,
+analyzing, documenting, validating,
+and managing the requirements of a
+software system.
+It ensures that the final system
+?
+meets the needs of users and
+stakeholders.
+
+---Page 3---
+R E
+EQUIREMENTS NGINEERING
+Requirements Engineering is the
+systematic process of:
+Understanding what users need
+?
+Defining system functionality
+?
+Documenting requirements clearly
+?
+Ensuring requirements are correct and
+?
+complete
+Managing requirement changes
+?
+throughout the project
+
+---Page 4---
+I R
+MPORTANCE OF EQUIREMENTS
+E
+NGINEERING
+Reduces project failure risk
+?
+Minimizes development cost
+?
+Prevents misunderstandings between
+?
+stakeholders and developers
+Improves product quality
+?
+Helps in accurate time and cost
+?
+estimation
+
+---Page 5---
+M A
+AIN CTIVITIES OF
+R E
+EQUIREMENTS NGINEERING
+Requirements Elicitation
+?
+Requirements Analysis
+?
+Requirements Specification
+?
+Requirements Validation
+?
+Requirements Management
+?
+
+---Page 6---
+R E
+EQUIREMENTS LICITATION
+Collecting requirements from
+stakeholders through:
+Interviews
+?
+Questionnaires
+?
+Observation
+?
+Workshops
+?
+Brainstorming
+?
+
+---Page 7---
+R A
+EQUIREMENTS NALYSIS
+Identifying conflicts
+?
+Prioritizing requirements
+?
+Checking feasibility
+?
+Clarifying ambiguities
+?
+
+---Page 8---
+R S
+EQUIREMENTS PECIFICATION
+Documenting requirements in a
+formal document called:
+SRS (Software Requirements
+?
+Specification)
+The SRS includes:
+?
+Functional requirements
+?
+Non-functional requirements
+?
+System constraints
+?
+User interfaces
+?
+
+---Page 9---
+R V
+EQUIREMENTS ALIDATION
+Ensuring requirements are:
+Correct
+?
+Complete
+?
+Consistent
+?
+Feasible
+?
+Testable
+?
+Validation methods:
+?
+Reviews
+?
+Prototyping
+?
+Test-case generation
+?
+
+---Page 10---
+R M
+EQUIREMENTS ANAGEMENT
+Handling changes in requirements:
+Version control
+?
+Change management
+?
+Traceability
+?
+
+---Page 11---
+T R
+YPES OF EQUIREMENTS
+Functional Non-Functional
+Requirements Requirements
+Describe what the Describe how the system
+system should do. performs.
+Example: Examples:
+?The system shall allow ?Performance (response
+users to register. time < 2 seconds)
+?The system shall ?Security
+generate reports ?Usability
+?Reliability
+?Scalability
+
+---Page 12---
+C R
+HALLENGES IN EQUIREMENTS
+E
+NGINEERING
+Changing requirements
+?
+Communication gaps
+?
+Incomplete requirements
+?
+Conflicting stakeholder needs
+?
+Time constraints
+?
+
+---Page 13---
+T U R
+OOLS SED IN EQUIREMENTS
+E
+NGINEERING
+Use Case Diagrams
+?
+UML Modeling
+?
+Prototyping Tools
+?
+Requirement Management Tools
+?
+
+
+===== SWD - Lect4.pdf =====
+---Page 1---
+I T
+NTRODUCTION O
+S D
+OFTWARE EVELOPMENT
+Software
+Design
+Dr: BOSSY MOHAMED
+
+---Page 2---
+S D
+OFTWARE ESIGN
+Is the process of creating the
+?
+architecture and structure of a
+software system before coding
+begins.
+It defines the components of the
+?
+system, their relationships, and
+how they interact with each
+other.
+
+---Page 3---
+O S
+BJECTIVES OF OFTWARE
+D
+ESIGN
+Organize the system components clearly.
+?
+Make the development process easier.
+?
+Reduce errors during implementation.
+?
+Improve the quality and performance of
+?
+the software.
+Make maintenance and future updates
+?
+easier.
+
+---Page 4---
+T S D
+YPES OF OFTWARE ESIGN
+High-Level Low-Level
+Design Design
+(HLD) (LLD)
+
+---Page 5---
+H -L D (HLD)
+IGH EVEL ESIGN
+Also called Architectural Design.
+?
+It focuses on the overall structure
+?
+of the system, including:
+Dividing the system into modules
+?
+Defining relationships between
+?
+components
+Selecting technologies and
+?
+architecture
+
+---Page 6---
+L -L D (LLD)
+OW EVEL ESIGN
+This focuses on the detailed
+?
+design of each module, such as:
+Algorithms
+?
+Data structures
+?
+Classes and functions
+?
+
+---Page 7---
+E S
+LEMENTS OF OFTWARE
+D
+ESIGN
+Software design usually includes the
+following elements:
+Architecture Design
+?
+Defines the overall system structure.
+Data Design
+?
+Defines databases and data
+structures.
+
+---Page 8---
+E S
+LEMENTS OF OFTWARE
+D
+ESIGN
+Software design usually includes the
+following elements:
+Interface Design
+?
+Describes how users or systems
+interact with the software.
+Component Design
+?
+Defines the internal structure of
+modules and functions.
+
+---Page 9---
+P S
+RINCIPLES OF OFTWARE
+D
+ESIGN
+Modularity ? dividing the system
+?
+into smaller independent modules.
+Abstraction ? hiding unnecessary
+?
+details and showing only essential
+features.
+Encapsulation ? protecting data
+?
+inside objects.
+Reusability ? designing
+?
+components that can be reused in
+other systems.
+
+---Page 10---
+S D P
+OFTWARE ESIGN ROCESS
+It describes the steps used to transform
+?
+system requirements into a structured
+design before coding begins in the
+Software Development Life Cycle (SDLC).
+It includes:
+?
+Requirement Analysis
+1.
+Architectural Design
+2.
+Data Design
+3.
+Interface Design
+4.
+Component-Level Design
+5.
+Design Review and Validation
+6.
+
+---Page 11---
+R A
+EQUIREMENT NALYSIS
+The first step is to study and understand
+?
+the system requirements collected during
+the requirements phase.
+Designers analyze:
+?
+Functional requirements (what the
+system should do)
+Non-functional requirements
+(performance, security, reliability)
+This step ensures that the design will
+?
+satisfy the user's needs.
+
+---Page 12---
+A D
+RCHITECTURAL ESIGN
+In this step, the overall structure
+?
+of the system is created.
+The system is divided into major
+?
+components or modules and the
+relationships between them are
+defined.
+Examples:
+?
+Client?Server architecture
+1.
+Layered architecture
+2.
+
+---Page 13---
+D D
+ATA ESIGN
+This step focuses on designing how
+?
+data will be stored and managed.
+It includes:
+?
+Database structure
+1.
+Data models
+2.
+Data relationships
+3.
+Data flow within the system
+4.
+
+---Page 14---
+I D
+NTERFACE ESIGN
+This step defines how different
+?
+parts of the system interact.
+It includes:
+?
+User Interface (UI) design
+1.
+Interaction between system
+2.
+modules
+Communication with external
+3.
+systems
+
+---Page 15---
+C -L D
+OMPONENT EVEL ESIGN
+Each module is designed in detail.
+?
+This includes:
+?
+Algorithms
+1.
+Classes and methods
+2.
+Internal logic of each component
+3.
+
+---Page 16---
+D R
+ESIGN EVIEW AND
+V
+ALIDATION
+The final step is to evaluate the
+?
+design to ensure it meets all
+requirements.
+Activities include:
+?
+Checking design quality
+1.
+Detecting design errors
+2.
+Improving efficiency and
+3.
+performance
+
+---Page 17---
+S E
+IMPLE XAMPLE
+Suppose we want to design an Online
+Library System.
+1. Requirement Analysis: Identify
+what the system should do, such as:
+Search for books
+?
+Borrow and return books
+?
+Manage users
+?
+2. Architectural Design: Divide the
+system into main modules:
+Book Management
+?
+User Management
+?
+Borrow/Return System
+?
+
+---Page 18---
+S E
+IMPLE XAMPLE
+3. Data Design: Create database tables such as:
+Books (BookID, Title, Author)
+?
+Users (UserID, Name)
+?
+BorrowRecords
+?
+4. Interface Design: Design screens for:
+Login page
+?
+Search books page
+?
+Borrow book page
+?
+5. Component Design
+Write algorithms and functions for tasks like
+searching books or updating borrow records.
+
+
+===== SWD - Lect5.pdf =====
+---Page 1---
+I T
+NTRODUCTION O
+S D
+OFTWARE EVELOPMENT
+Implementation
+and Coding
+Practices
+Dr: BOSSY MOHAMED
+
+---Page 2---
+Implementation and Coding
+?
+Practices are important stages in
+software development where the design
+of a system is translated into actual
+program code.
+These practices ensure that the software
+?
+is efficient, readable, maintainable,
+and reliable.
+
+---Page 3---
+I
+MPLEMENTATION
+Is the phase in which developers convert
+?
+the software design and algorithms
+into executable code using a
+programming language such as Java,
+Python, or C++.
+
+---Page 4---
+M A
+AIN CTIVITIES IN
+I
+MPLEMENTATION
+Writing program code according to the
+?
+design specifications.
+Creating modules or components of the
+?
+system.
+Integrating different modules together.
+?
+Performing initial testing and debugging.
+?
+
+---Page 5---
+I E
+MPLEMENTATION XAMPLE
+If the system design specifies a login
+?
+function, the implementation phase
+includes writing the code that:
+Accepts username and password.
+?
+Checks them against stored data.
+?
+Grants or denies access.
+?
+
+---Page 6---
+I E
+MPLEMENTATION XAMPLE
+
+---Page 7---
+C P
+ODING RACTICES
+Coding practices (or coding
+?
+standards) are a set of guidelines
+that programmers follow while
+writing code to make it clear,
+consistent, and easy to maintain.
+
+---Page 8---
+C C P
+OMMON ODING RACTICES
+Meaningful Variable Names:
+1.
+Variables should clearly describe
+their purpose.
+Bad example:
+?
+Good example:
+?
+
+---Page 9---
+C C P
+OMMON ODING RACTICES
+Proper Code Formatting: Use
+2.
+indentation and spacing to make code
+readable.
+
+---Page 10---
+C C P
+OMMON ODING RACTICES
+Code Comments: Comments
+3.
+explain what the code does.
+
+---Page 11---
+C C P
+OMMON ODING RACTICES
+Modular Programming: Break
+4.
+large programs into small functions
+or modules.
+
+---Page 12---
+C C P
+OMMON ODING RACTICES
+Error Handling: Programs should
+5.
+handle errors to avoid crashes.
+
+---Page 13---
+I G C
+MPORTANCE OF OOD ODING
+P
+RACTICES
+Improves readability
+?
+Makes maintenance easier
+?
+Reduces errors and bugs
+?
+Helps team collaboration
+?
+Improves software quality
+?
+
+
+===== SWD - Lect6.pdf =====
+---Page 1---
+I T
+NTRODUCTION O
+S D
+OFTWARE EVELOPMENT
+Software
+Testing
+Dr: BOSSY MOHAMED
+
+---Page 2---
+W S
+HAT IS OFTWARE
+T ?
+ESTING
+Is the process of evaluating a software
+?
+application to ensure it works correctly,
+meets requirements, and is free of
+defects (bugs).
+In simple terms: Testing checks if the
+software does what it is supposed to do
+and identifies problems before users
+encounter them.
+
+---Page 3---
+S (D )
+OFTWARE TESTING EEP VIEW
+Software Testing is not just about finding bugs
+?
+? it is a systematic process to evaluate:
+Correctness (Does it work as expected?)
+?
+Completeness (Are all requirements covered?)
+?
+Quality (Is it reliable, secure, and fast?)
+?
+It is part of Software Quality Assurance
+?
+(SQA), which focuses on improving the entire
+development process.
+
+---Page 4---
+O S
+BJECTIVES OF OFTWARE
+T
+ESTING
+Ensure the software functions
+?
+correctly
+Detect and fix bugs (defects)
+?
+Improve software quality
+?
+Verify that requirements are met
+?
+Reduce risks before release
+?
+
+---Page 5---
+K C Y MUST
+EY ONCEPTS OU
+K
+NOW
+Verification vs Validation
+Verification ? Are we building the
+?
+product right?
+(Check design, documents, code)
+Validation ? Are we building the
+?
+right product?
+(Check final product meets user
+needs)
+
+---Page 6---
+K C Y MUST
+EY ONCEPTS OU
+K
+NOW
+Defect, Error, Failure
+Error ? Human mistake (developer
+?
+writes wrong code)
+Defect (Bug) ? Problem in code
+?
+Failure ? System does not work
+?
+correctly
+Example:
+?
+Wrong formula (error) ? wrong code
+(defect) ? wrong output (failure)
+
+---Page 7---
+K C Y MUST
+EY ONCEPTS OU
+K
+NOW
+Test Case vs Test Scenario
+Test Scenario ? High-level idea (e.g.,
+?
+"Login functionality")
+Test Case ? Detailed steps + expected
+?
+result
+
+---Page 8---
+T S T
+YPES OF OFTWARE ESTING
+Based on Execution
+Based on Level
+Based on Technique
+
+---Page 9---
+B E
+ASED ON XECUTION
+Manual Testing
+?
+Performed by humans
+without automation tools
+Automated Testing
+?
+Performed using tools and
+scripts
+
+---Page 10---
+B L
+ASED ON EVEL
+Unit Testing
+?
+Testing individual components
+(functions/modules)
+Integration Testing
+?
+Testing interactions between
+components
+System Testing
+?
+Testing the complete system
+Acceptance Testing
+?
+Ensuring the system meets user
+needs
+
+---Page 11---
+U
+NIT TESTING
+Done by developers
+?
+Tests small pieces of code
+?
+Tools: JUnit, NUnit
+?
+
+---Page 12---
+I T
+NTEGRATION ESTING
+Tests interaction between
+?
+modules
+Types: Top-down
+?
+Bottom-up
+Big Bang
+
+---Page 13---
+S T
+YSTEM ESTING
+Full system testing
+?
+Includes:
+?
+Functional testing
+Performance testing
+Security testing
+
+---Page 14---
+A T
+CCEPTANCE ESTING
+Done by users or clients Types:
+?
+UAT (User Acceptance
+Testing)
+Alpha Testing (inside
+company)
+Beta Testing (real users)
+
+---Page 15---
+B T
+ASED ON ECHNIQUE
+Black Box Testing
+?
+Testing without knowledge of
+internal code
+White Box Testing
+?
+Testing with knowledge of
+internal code
+Gray Box Testing
+?
+Combination of both
+
+---Page 16---
+T T
+YPES OF ESTING
+(A )
+DVANCED
+Functional Testing
+1.
+Checks what the system does:
+?
+Unit Testing
+?
+Integration Testing
+?
+System Testing
+?
+
+---Page 17---
+T T
+YPES OF ESTING
+(A )
+DVANCED
+Non- Functional Testing
+1.
+Checks how the system performs:
+?
+Performance Testing
+?
+Load Testing
+?
+Stress Testing
+?
+Scalability Testing
+?
+Security Testing
+?
+Check vulnerabilities
+?
+Usability Testing
+?
+Easy to use?
+?
+Compatibility Testing
+?
+Works on all devices/browsers?
+?
+
+---Page 18---
+S :
+TAGES OF TESTING
+Requirement Analysis ? Understand
+?
+requirements
+Test Planning ? Create a testing
+?
+strategy
+Test Case Design ? Write test cases
+?
+Test Execution ? Run tests
+?
+Defect Reporting ? Log bugs
+?
+Test Closure ? Finalize testing
+?
+
+---Page 19---
+?? E
+XAMPLE
+For a login system:
+Enter username and password
+?
+Click login
+?
+Testing includes:
+?
+Is login successful with correct data?
+?
+What happens with incorrect data?
+?
+Are error messages displayed?
+?
+Is the performance acceptable?
+?
+
+---Page 20---
+I S
+MPORTANCE OF OFTWARE
+T
+ESTING
+Reduces failures after release
+?
+Improves user experience
+?
+Saves cost of fixing issues later
+?
+Builds user trust
+?
+
+
+===== SWD - Lect7 (1).pdf =====
+---Page 1---
+I T
+NTRODUCTION O
+S D
+OFTWARE EVELOPMENT
+Project
+Management in
+Software
+Development
+Dr: BOSSY MOHAMED
+
+---Page 2---
+W
+HAT IS SOFTWARE PROJECT
+?
+MANAGEMENT
+It is a branch of Project Management
+?
+focused specially on software
+projects.
+It ensures that a software product is
+?
+delivered:
+On time
+?
+Within budget
+?
+With the required quality
+?
+
+---Page 3---
+K
+EY OBJECTIVES
+Deliver software on time
+?
+Stay within budget
+?
+Meet user requirements
+?
+Ensure high quality
+?
+Manage risks and changes
+?
+
+---Page 4---
+T T C
+HE RIPLE ONSTRAINT
+Also known as the Project Management
+?
+Triangle:
+Scope ? What needs to be done
+?
+Time ? How long it will take
+?
+Cost ? Budget/resources
+?
+
+---Page 5---
+P L C S
+ROJECT IFE YCLE IN OFTWARE
+D
+EVELOPMENT
+1. Initiation
+Define project goals
+?
+Identify stakeholders
+?
+Feasibility study
+?
+2. Planning
+Create project plan
+?
+Define scope, schedule, cost
+?
+Risk planning
+?
+
+---Page 6---
+P L C S
+ROJECT IFE YCLE IN OFTWARE
+D
+EVELOPMENT
+3. Execution
+Develop the software
+?
+Assign tasks to team members
+?
+Ensure communication
+?
+4. Monitoring & Controlling
+Track progress
+?
+Manage risks
+?
+Adjust plans if needed
+?
+
+---Page 7---
+P L C S
+ROJECT IFE YCLE IN OFTWARE
+D
+EVELOPMENT
+5. Closure
+?
+Deliver final product
+?
+Evaluate performance
+?
+Document lessons learned
+?
+
+---Page 8---
+K R
+EY OLES
+Project Manager ? Leads the
+?
+project
+Software Developers ? Build the
+?
+system
+QA/Testers ? Ensure quality
+?
+Stakeholders ? Provide
+requirements
+Product Owner (Agile) ? Defines
+?
+product vision
+
+---Page 9---
+T U
+OOLS SED
+Jira
+?
+Trello
+?
+Microsoft Project
+?
+
+---Page 10---
+C S P
+HALLENGES IN OFTWARE ROJECT
+M
+ANAGEMENT
+Changing requirements
+?
+Tight deadlines
+?
+Budget limitations
+?
+Communication gaps
+Technical complexity
+?
+
+---Page 11---
+B P
+EST RACTICES
+Clear requirements from the start
+?
+Continuous communication
+?
+Use Agile for flexibility
+?
+Regular testing and feedback
+?
+Risk management planning
+?
+
+---Page 12---
+S E
+IMPLE XAMPLE
+A team building a mobile app:
+?
+1- Define features (Login, dashboard,
+notification)
+2- Plan timeline (3 months)
+3- Develop in sprints (Agile)
+4- Test and improve
+5- Launch the app
+
+---Page 13---
+`
+
+
+===== SWD - Lect7.pdf =====
+---Page 1---
+I T
+NTRODUCTION O
+S D
+OFTWARE EVELOPMENT
+Project
+Management in
+Software
+Development
+Dr: BOSSY MOHAMED
+
+---Page 2---
+W
+HAT IS SOFTWARE PROJECT
+?
+MANAGEMENT
+It is a branch of Project Management
+?
+focused specially on software
+projects.
+It ensures that a software product is
+?
+delivered:
+On time
+?
+Within budget
+?
+With the required quality
+?
+
+---Page 3---
+K
+EY OBJECTIVES
+Deliver software on time
+?
+Stay within budget
+?
+Meet user requirements
+?
+Ensure high quality
+?
+Manage risks and changes
+?
+
+---Page 4---
+T T C
+HE RIPLE ONSTRAINT
+Also known as the Project Management
+?
+Triangle:
+Scope ? What needs to be done
+?
+Time ? How long it will take
+?
+Cost ? Budget/resources
+?
+
+---Page 5---
+P L C S
+ROJECT IFE YCLE IN OFTWARE
+D
+EVELOPMENT
+1. Initiation
+Define project goals
+?
+Identify stakeholders
+?
+Feasibility study
+?
+2. Planning
+Create project plan
+?
+Define scope, schedule, cost
+?
+Risk planning
+?
+
+---Page 6---
+P L C S
+ROJECT IFE YCLE IN OFTWARE
+D
+EVELOPMENT
+3. Execution
+Develop the software
+?
+Assign tasks to team members
+?
+Ensure communication
+?
+4. Monitoring & Controlling
+Track progress
+?
+Manage risks
+?
+Adjust plans if needed
+?
+
+---Page 7---
+P L C S
+ROJECT IFE YCLE IN OFTWARE
+D
+EVELOPMENT
+5. Closure
+?
+Deliver final product
+?
+Evaluate performance
+?
+Document lessons learned
+?
+
+---Page 8---
+K R
+EY OLES
+Project Manager ? Leads the
+?
+project
+Software Developers ? Build the
+?
+system
+QA/Testers ? Ensure quality
+?
+Stakeholders ? Provide
+requirements
+Product Owner (Agile) ? Defines
+?
+product vision
+
+---Page 9---
+T U
+OOLS SED
+Jira
+?
+Trello
+?
+Microsoft Project
+?
+
+---Page 10---
+C S P
+HALLENGES IN OFTWARE ROJECT
+M
+ANAGEMENT
+Changing requirements
+?
+Tight deadlines
+?
+Budget limitations
+?
+Communication gaps
+Technical complexity
+?
+
+---Page 11---
+B P
+EST RACTICES
+Clear requirements from the start
+?
+Continuous communication
+?
+Use Agile for flexibility
+?
+Regular testing and feedback
+?
+Risk management planning
+?
+
+---Page 12---
+S E
+IMPLE XAMPLE
+A team building a mobile app:
+?
+1- Define features (Login, dashboard,
+notification)
+2- Plan timeline (3 months)
+3- Develop in sprints (Agile)
+4- Test and improve
+5- Launch the app
+
+---Page 13---
+`
+
+
+===== SWD - Lect9 (1).pdf =====
+---Page 1---
+I T
+NTRODUCTION O
+S D
+OFTWARE EVELOPMENT
+Case Studies
+and Real-World
+Applications
+Dr: BOSSY MOHAMED
+
+---Page 2---
+1. E-C P
+OMMERCE LATFORM
+(O S S )
+NLINE HOPPING YSTEM
+
+---Page 3---
+1. E-C P
+OMMERCE LATFORM
+(O S S )
+NLINE HOPPING YSTEM
+Case Overview
+An online platform like Amazon or Jumia
+?
+allows users to browse products, add items
+to a cart, and complete purchases.
+Key Features
+Product catalog with search & filtering
+?
+Shopping cart & checkout system
+?
+Secure payment integration
+?
+Order tracking
+?
+
+---Page 4---
+1. E-C P
+OMMERCE LATFORM
+(O S S )
+NLINE HOPPING YSTEM
+Technologies Used
+Frontend: React / Angular
+?
+Backend: Node.js / Django
+?
+Database: MySQL / MongoDB
+?
+APIs: Payment gateways (e.g., Stripe)
+?
+Challenges
+Handling high traffic (scalability)
+?
+Ensuring data security (payments)
+?
+Maintaining fast response times
+?
+Outcome
+A scalable and user-friendly platform that
+?
+processes millions of transactions daily.
+
+---Page 5---
+2. R -S A
+IDE HARING PPLICATION
+
+---Page 6---
+2. R -S A
+IDE HARING PPLICATION
+Case Overview
+Apps like Uber and Careem connect
+?
+passengers with drivers in real-time.
+Key Features
+Real-time GPS tracking
+?
+Driver-passenger matching
+?
+Fare calculation
+?
+In-app payments
+?
+
+---Page 7---
+2. R -S A
+IDE HARING PPLICATION
+Technologies Used
+Mobile Apps: Swift (iOS), Kotlin
+?
+(Android)
+Backend: Microservices architecture
+?
+Maps: Google Maps API
+?
+Real-time data: WebSockets
+?
+
+---Page 8---
+2. R -S A
+IDE HARING PPLICATION
+Challenges
+Real-time communication
+?
+Location accuracy
+?
+Surge pricing algorithms
+?
+Outcome
+Efficient transportation system with
+?
+dynamic pricing and real-time
+updates.
+
+---Page 9---
+3. H M S
+EALTHCARE ANAGEMENT YSTEM
+
+---Page 10---
+3. H M S
+EALTHCARE ANAGEMENT YSTEM
+Case Overview
+Hospitals use software systems to
+?
+manage patient data, appointments,
+and billing.
+Key Features
+Electronic Health Records (EHR)
+?
+Appointment scheduling
+?
+Billing and insurance processing
+?
+Telemedicine support
+?
+
+---Page 11---
+3. H M S
+EALTHCARE ANAGEMENT YSTEM
+Technologies Used
+Backend: Java / .NET
+?
+Database: PostgreSQL
+?
+Security: Encryption & authentication
+?
+Challenges
+Data privacy (HIPAA compliance)
+?
+Integration with medical devices
+?
+System reliability
+?
+Outcome
+Improved patient care and efficient
+?
+hospital operations.
+
+---Page 12---
+4. B & F S
+ANKING INANCIAL YSTEMS
+
+---Page 13---
+4. B & F S
+ANKING INANCIAL YSTEMS
+Case Overview
+Banks use secure software for
+?
+transactions, account management,
+and fraud detection.
+Key Features
+Online banking services
+?
+Fund transfers
+?
+Fraud detection systems
+?
+ATM integration
+?
+
+---Page 14---
+4. B & F S
+ANKING INANCIAL YSTEMS
+Technologies Used
+Backend: COBOL (legacy), Java
+?
+Security: Multi-factor authentication
+?
+AI/ML: Fraud detection
+?
+Challenges
+High security requirements
+?
+Regulatory compliance
+?
+System uptime (24/7 availability)
+?
+Outcome
+Secure and reliable financial services
+?
+for millions of users.
+
+---Page 15---
+5. S M P
+OCIAL EDIA LATFORMS
+
+---Page 16---
+5. S M P
+OCIAL EDIA LATFORMS
+Case Overview
+Platforms like Facebook and
+?
+Instagram enable users to share
+content and interact globally.
+Key Features
+User profiles
+?
+News feeds & content sharing
+?
+Messaging systems
+?
+Recommendation algorithms
+?
+
+---Page 17---
+5. S M P
+OCIAL EDIA LATFORMS
+Technologies Used
+Frontend: React Native
+?
+Backend: Distributed systems
+?
+AI: Content recommendation
+?
+Challenges
+Handling massive user data
+?
+Preventing misinformation
+?
+Ensuring system scalability
+?
+Outcome
+Global connectivity and high user
+?
+engagement.
+
+---Page 18---
+`
+
+
+===== SWD - Lect9.pdf =====
+---Page 1---
+I T
+NTRODUCTION O
+S D
+OFTWARE EVELOPMENT
+Case Studies
+and Real-World
+Applications
+Dr: BOSSY MOHAMED
+
+---Page 2---
+1. E-C P
+OMMERCE LATFORM
+(O S S )
+NLINE HOPPING YSTEM
+
+---Page 3---
+1. E-C P
+OMMERCE LATFORM
+(O S S )
+NLINE HOPPING YSTEM
+Case Overview
+An online platform like Amazon or Jumia
+?
+allows users to browse products, add items
+to a cart, and complete purchases.
+Key Features
+Product catalog with search & filtering
+?
+Shopping cart & checkout system
+?
+Secure payment integration
+?
+Order tracking
+?
+
+---Page 4---
+1. E-C P
+OMMERCE LATFORM
+(O S S )
+NLINE HOPPING YSTEM
+Technologies Used
+Frontend: React / Angular
+?
+Backend: Node.js / Django
+?
+Database: MySQL / MongoDB
+?
+APIs: Payment gateways (e.g., Stripe)
+?
+Challenges
+Handling high traffic (scalability)
+?
+Ensuring data security (payments)
+?
+Maintaining fast response times
+?
+Outcome
+A scalable and user-friendly platform that
+?
+processes millions of transactions daily.
+
+---Page 5---
+2. R -S A
+IDE HARING PPLICATION
+
+---Page 6---
+2. R -S A
+IDE HARING PPLICATION
+Case Overview
+Apps like Uber and Careem connect
+?
+passengers with drivers in real-time.
+Key Features
+Real-time GPS tracking
+?
+Driver-passenger matching
+?
+Fare calculation
+?
+In-app payments
+?
+
+---Page 7---
+2. R -S A
+IDE HARING PPLICATION
+Technologies Used
+Mobile Apps: Swift (iOS), Kotlin
+?
+(Android)
+Backend: Microservices architecture
+?
+Maps: Google Maps API
+?
+Real-time data: WebSockets
+?
+
+---Page 8---
+2. R -S A
+IDE HARING PPLICATION
+Challenges
+Real-time communication
+?
+Location accuracy
+?
+Surge pricing algorithms
+?
+Outcome
+Efficient transportation system with
+?
+dynamic pricing and real-time
+updates.
+
+---Page 9---
+3. H M S
+EALTHCARE ANAGEMENT YSTEM
+
+---Page 10---
+3. H M S
+EALTHCARE ANAGEMENT YSTEM
+Case Overview
+Hospitals use software systems to
+?
+manage patient data, appointments,
+and billing.
+Key Features
+Electronic Health Records (EHR)
+?
+Appointment scheduling
+?
+Billing and insurance processing
+?
+Telemedicine support
+?
+
+---Page 11---
+3. H M S
+EALTHCARE ANAGEMENT YSTEM
+Technologies Used
+Backend: Java / .NET
+?
+Database: PostgreSQL
+?
+Security: Encryption & authentication
+?
+Challenges
+Data privacy (HIPAA compliance)
+?
+Integration with medical devices
+?
+System reliability
+?
+Outcome
+Improved patient care and efficient
+?
+hospital operations.
+
+---Page 12---
+4. B & F S
+ANKING INANCIAL YSTEMS
+
+---Page 13---
+4. B & F S
+ANKING INANCIAL YSTEMS
+Case Overview
+Banks use secure software for
+?
+transactions, account management,
+and fraud detection.
+Key Features
+Online banking services
+?
+Fund transfers
+?
+Fraud detection systems
+?
+ATM integration
+?
+
+---Page 14---
+4. B & F S
+ANKING INANCIAL YSTEMS
+Technologies Used
+Backend: COBOL (legacy), Java
+?
+Security: Multi-factor authentication
+?
+AI/ML: Fraud detection
+?
+Challenges
+High security requirements
+?
+Regulatory compliance
+?
+System uptime (24/7 availability)
+?
+Outcome
+Secure and reliable financial services
+?
+for millions of users.
+
+---Page 15---
+5. S M P
+OCIAL EDIA LATFORMS
+
+---Page 16---
+5. S M P
+OCIAL EDIA LATFORMS
+Case Overview
+Platforms like Facebook and
+?
+Instagram enable users to share
+content and interact globally.
+Key Features
+User profiles
+?
+News feeds & content sharing
+?
+Messaging systems
+?
+Recommendation algorithms
+?
+
+---Page 17---
+5. S M P
+OCIAL EDIA LATFORMS
+Technologies Used
+Frontend: React Native
+?
+Backend: Distributed systems
+?
+AI: Content recommendation
+?
+Challenges
+Handling massive user data
+?
+Preventing misinformation
+?
+Ensuring system scalability
+?
+Outcome
+Global connectivity and high user
+?
+engagement.
+
+---Page 18---
+`
+

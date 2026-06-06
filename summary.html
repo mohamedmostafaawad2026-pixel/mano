@@ -1,0 +1,401 @@
+﻿<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quick Reference Summary - Software Development and Methodologies</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:'Inter',sans-serif; background:#f0f4f8; color:#1e293b; line-height:1.7; }
+.top-bar { background:linear-gradient(135deg,#1e40af,#3b82f6); color:#fff; padding:8px 12px; text-align:center; position:sticky; top:0; z-index:100; display:flex; flex-wrap:wrap; align-items:center; justify-content:center; gap:4px; }
+.top-bar a { color:#fff; text-decoration:none; margin:0 8px; font-weight:500; font-size:14px; white-space:nowrap; }
+.top-bar a:hover { text-decoration:underline; }
+.container { max-width:1000px; margin:0 auto; padding:20px; }
+.hero { background:linear-gradient(135deg,#1e3a5f,#2563eb); color:#fff; padding:60px 40px; border-radius:20px; margin-bottom:30px; text-align:center; }
+.hero h1 { font-size:2.2rem; font-weight:800; margin-bottom:10px; }
+.hero .sub { opacity:0.85; font-size:1.1rem; }
+.hero .lec-badge { display:inline-block; background:rgba(255,255,255,0.15); padding:6px 18px; border-radius:50px; font-size:0.9rem; margin-bottom:16px; }
+.lec-header { background:#fff; border-radius:16px; padding:20px 32px; margin-bottom:4px; box-shadow:0 1px 3px rgba(0,0,0,0.08); }
+.lec-header h2 { font-size:1.25rem; font-weight:700; color:#1e40af; }
+.lec-header .ar-title { font-family:'Cairo',sans-serif; direction:rtl; color:#475569; font-size:0.95rem; margin-top:4px; }
+.summary-table { width:100%; border-collapse:separate; border-spacing:0; margin-bottom:30px; border-radius:12px; overflow:hidden; box-shadow:0 1px 3px rgba(0,0,0,0.08); }
+.summary-table th { background:linear-gradient(135deg,#1e40af,#2563eb); color:#fff; padding:12px 16px; text-align:left; font-weight:600; font-size:0.9rem; }
+.summary-table th:last-child { text-align:right; font-family:'Cairo',sans-serif; }
+.summary-table td { padding:10px 16px; font-size:0.92rem; }
+.summary-table tr:nth-child(even) td { background:#f8fafc; }
+.summary-table tr:nth-child(odd) td { background:#fff; }
+.summary-table tr:hover td { background:#e0f2fe; }
+.summary-table td:first-child { font-weight:600; color:#1e40af; }
+.summary-table td:last-child { text-align:right; font-family:'Cairo',sans-serif; color:#475569; direction:rtl; }
+.ar { font-family:'Cairo',sans-serif; direction:rtl; }
+.footer { text-align:center; padding:40px; color:#94a3b8; font-size:0.9rem; }
+@media(max-width:768px) { .hero h1 {font-size:1.6rem;} .summary-table td {font-size:0.82rem; padding:8px 10px;} .summary-table th {font-size:0.82rem;} .top-bar a {font-size:13px; margin:0 6px;} }
+@media(max-width:480px) { .hero {padding:28px 16px;} .hero h1 {font-size:1.3rem;} .hero .sub {font-size:0.85rem;} .top-bar {padding:6px 6px; gap:2px;} .top-bar a {font-size:11px; margin:0 4px;} .top-bar .lang-btn {padding:3px 6px; font-size:10px;} .lec-header {padding:12px 14px;} .lec-header h2 {font-size:1rem;} .lec-header .ar-title {font-size:0.82rem;} .summary-table th, .summary-table td {padding:5px 4px; font-size:0.7rem;} .summary-table th:first-child, .summary-table td:first-child {word-break:break-word;} .container {padding:10px;} .footer {padding:24px 16px; font-size:0.8rem;} }
+#transHint.visible { opacity: 1 !important; transform: translateY(0) !important; }
+</style>
+</head>
+<body>
+<div class="top-bar">
+    <a href="index.html"><i class="fas fa-home"></i> Home</a>
+    <a href="explanation.html"><i class="fas fa-book"></i> Explanation</a>
+    <a href="quiz.html"><i class="fas fa-question-circle"></i> Quiz</a>
+    <a href="summary.html"><i class="fas fa-file-alt"></i> Summary</a>
+  <button class="lang-btn" id="langEn" onclick="setLang('en')" style="display:inline-flex;align-items:center;gap:5px;padding:5px 14px;border-radius:20px;border:1px solid rgba(255,255,255,0.3);background:transparent;color:rgba(255,255,255,0.8);font-size:12px;font-weight:600;cursor:pointer;font-family:inherit;transition:all .2s;">
+    <i class="fas fa-language"></i> English
+  </button>
+  <button class="lang-btn" id="langAr" onclick="setLang('ar')" style="display:inline-flex;align-items:center;gap:5px;padding:5px 14px;border-radius:20px;border:1px solid rgba(255,255,255,0.3);background:transparent;color:rgba(255,255,255,0.8);font-size:12px;font-weight:600;cursor:pointer;font-family:inherit;transition:all .2s;">
+    <i class="fas fa-language"></i> العربية
+  </button>
+</div>
+<div class="container">
+    <div class="hero">
+        <div class="lec-badge"><i class="fas fa-graduation-cap"></i> Quick Reference</div>
+        <h1>Quick Reference Summary</h1>
+        <p class="sub">ملخص سريع للمراجعة &mdash; COM 201</p>
+    </div>
+
+    <!-- Lecture 1 -->
+    <div class="lec-header">
+        <h2>Lecture 1: Introduction to Software Development</h2>
+        <div class="ar-title">المحاضرة 1: مقدمة في تطوير البرمجيات</div>
+    </div>
+    <div style="overflow-x:auto;-webkit-overflow-scrolling:touch"><table class="summary-table">
+        <tr><th>Term</th><th>Easy Definition</th><th>المصطلح</th></tr>
+        <tr><td>Software</td><td>Collection of programs &amp; instructions that tell a computer what to do</td><td>برمجيات</td></tr>
+        <tr><td>System Software</td><td>Manages computer hardware (OS, drivers)</td><td>برمجيات نظام</td></tr>
+        <tr><td>Application Software</td><td>Programs for end users (Word, Photoshop)</td><td>برمجيات تطبيقية</td></tr>
+        <tr><td>Programming Software</td><td>Tools for developers (IDEs, compilers)</td><td>برمجيات برمجة</td></tr>
+        <tr><td>SDLC</td><td>Structured process to build software (plan &rarr; code &rarr; test &rarr; maintain)</td><td>دورة حياة البرمجيات</td></tr>
+        <tr><td>Software Developer</td><td>Person who writes code</td><td>مطور برمجيات</td></tr>
+        <tr><td>System Analyst</td><td>Person who studies user needs</td><td>محلل أنظمة</td></tr>
+        <tr><td>QA Engineer</td><td>Person who tests software quality</td><td>مهندس ضمان الجودة</td></tr>
+        <tr><td>Reliability</td><td>Software works correctly every time</td><td>موثوقية</td></tr>
+        <tr><td>Efficiency</td><td>Software uses resources wisely</td><td>كفاءة</td></tr>
+        <tr><td>Security</td><td>Software protects data from threats</td><td>أمان</td></tr>
+        <tr><td>Scalability</td><td>Software can handle more users over time</td><td>قابلية التوسع</td></tr>
+        <tr><td>Maintainability</td><td>Software is easy to update and fix</td><td>قابلية الصيانة</td></tr>
+        <tr><td>Usability</td><td>Software is easy to learn and use</td><td>سهولة الاستخدام</td></tr>
+    </table></div>
+
+    <!-- Lecture 2 -->
+    <div class="lec-header">
+        <h2>Lecture 2: SDLC (Software Development Life Cycle)</h2>
+        <div class="ar-title">المحاضرة 2: دورة حياة تطوير البرمجيات</div>
+    </div>
+    <div style="overflow-x:auto;-webkit-overflow-scrolling:touch"><table class="summary-table">
+        <tr><th>Term</th><th>Easy Definition</th><th>المصطلح</th></tr>
+        <tr><td>SDLC</td><td>Step-by-step process to develop software</td><td>دورة حياة البرمجيات</td></tr>
+        <tr><td>Planning</td><td>Define goals, costs, timeline, feasibility</td><td>تخطيط</td></tr>
+        <tr><td>Requirements Analysis</td><td>Gather and document user needs</td><td>تحليل المتطلبات</td></tr>
+        <tr><td>System Design</td><td>Plan architecture, database, interface</td><td>تصميم النظام</td></tr>
+        <tr><td>Implementation</td><td>Write the actual code</td><td>تنفيذ</td></tr>
+        <tr><td>Testing</td><td>Find and fix bugs</td><td>اختبار</td></tr>
+        <tr><td>Deployment</td><td>Release software to users</td><td>نشر</td></tr>
+        <tr><td>Maintenance</td><td>Update and improve software after release</td><td>صيانة</td></tr>
+        <tr><td>Waterfall Model</td><td>Linear model where each phase finishes before next starts</td><td>نموذج الشلال</td></tr>
+        <tr><td>Agile Model</td><td>Flexible model with short cycles called sprints</td><td>نموذج رشيق</td></tr>
+        <tr><td>Spiral Model</td><td>Risk-driven model combining waterfall + prototyping</td><td>نموذج حلزوني</td></tr>
+        <tr><td>V-Model</td><td>Testing runs in parallel with development</td><td>نموذج V</td></tr>
+    </table></div>
+
+    <!-- Lecture 3 -->
+    <div class="lec-header">
+        <h2>Lecture 3: Requirements Engineering</h2>
+        <div class="ar-title">المحاضرة 3: هندسة المتطلبات</div>
+    </div>
+    <div style="overflow-x:auto;-webkit-overflow-scrolling:touch"><table class="summary-table">
+        <tr><th>Term</th><th>Easy Definition</th><th>المصطلح</th></tr>
+        <tr><td>Requirements Engineering</td><td>Process of defining what software should do</td><td>هندسة المتطلبات</td></tr>
+        <tr><td>Elicitation</td><td>Collecting requirements from stakeholders</td><td>استخراج</td></tr>
+        <tr><td>Analysis</td><td>Checking requirements for conflicts and priorities</td><td>تحليل</td></tr>
+        <tr><td>Specification</td><td>Writing requirements in SRS document</td><td>تحديد</td></tr>
+        <tr><td>Validation</td><td>Checking requirements are correct and complete</td><td>تحقق</td></tr>
+        <tr><td>Management</td><td>Handling changes to requirements</td><td>إدارة</td></tr>
+        <tr><td>Functional Requirements</td><td>What the system should DO (e.g., &ldquo;user can login&rdquo;)</td><td>متطلبات وظيفية</td></tr>
+        <tr><td>Non-Functional Requirements</td><td>HOW the system performs (speed, security)</td><td>متطلبات غير وظيفية</td></tr>
+        <tr><td>SRS</td><td>Software Requirements Specification document</td><td>وثيقة تحديد المتطلبات</td></tr>
+    </table></div>
+
+    <!-- Lecture 4 -->
+    <div class="lec-header">
+        <h2>Lecture 4: Software Design</h2>
+        <div class="ar-title">المحاضرة 4: تصميم البرمجيات</div>
+    </div>
+    <div style="overflow-x:auto;-webkit-overflow-scrolling:touch"><table class="summary-table">
+        <tr><th>Term</th><th>Easy Definition</th><th>المصطلح</th></tr>
+        <tr><td>Software Design</td><td>Creating system architecture before coding</td><td>تصميم البرمجيات</td></tr>
+        <tr><td>HLD (High-Level Design)</td><td>Overall system structure and modules</td><td>تصميم عالي المستوى</td></tr>
+        <tr><td>LLD (Low-Level Design)</td><td>Detailed design of each module</td><td>تصميم منخفض المستوى</td></tr>
+        <tr><td>Modularity</td><td>Dividing system into small independent parts</td><td>نمطية</td></tr>
+        <tr><td>Abstraction</td><td>Hiding complex details, showing only essentials</td><td>تجريد</td></tr>
+        <tr><td>Encapsulation</td><td>Protecting data inside objects</td><td>تغليف</td></tr>
+        <tr><td>Reusability</td><td>Using same components in different systems</td><td>قابلية إعادة الاستخدام</td></tr>
+        <tr><td>Architecture Design</td><td>Defines overall structure</td><td>تصميم معماري</td></tr>
+        <tr><td>Data Design</td><td>Defines database and data structures</td><td>تصميم البيانات</td></tr>
+        <tr><td>Interface Design</td><td>How users/systems interact with software</td><td>تصميم الواجهة</td></tr>
+        <tr><td>Component Design</td><td>Internal structure of modules</td><td>تصميم المكونات</td></tr>
+    </table></div>
+
+    <!-- Lecture 5 -->
+    <div class="lec-header">
+        <h2>Lecture 5: Implementation &amp; Coding Practices</h2>
+        <div class="ar-title">المحاضرة 5: التنفيذ وممارسات البرمجة</div>
+    </div>
+    <div style="overflow-x:auto;-webkit-overflow-scrolling:touch"><table class="summary-table">
+        <tr><th>Term</th><th>Easy Definition</th><th>المصطلح</th></tr>
+        <tr><td>Implementation</td><td>Converting design into actual code</td><td>تنفيذ</td></tr>
+        <tr><td>Coding Standards</td><td>Rules for writing clean, consistent code</td><td>معايير البرمجة</td></tr>
+        <tr><td>Meaningful Names</td><td>Variables describe their purpose clearly</td><td>أسماء ذات معنى</td></tr>
+        <tr><td>Code Formatting</td><td>Proper indentation and spacing</td><td>تنسيق الكود</td></tr>
+        <tr><td>Comments</td><td>Text explaining what code does</td><td>تعليقات</td></tr>
+        <tr><td>Modular Programming</td><td>Breaking code into small functions</td><td>برمجة نمطية</td></tr>
+        <tr><td>Error Handling</td><td>Code that manages failures gracefully</td><td>معالجة الأخطاء</td></tr>
+        <tr><td>Debugging</td><td>Finding and removing errors in code</td><td>تصحيح الأخطاء</td></tr>
+        <tr><td>Version Control</td><td>Tracking code changes (Git)</td><td>التحكم بالنسخ</td></tr>
+    </table></div>
+
+    <!-- Lecture 6 -->
+    <div class="lec-header">
+        <h2>Lecture 6: Software Testing</h2>
+        <div class="ar-title">المحاضرة 6: اختبار البرمجيات</div>
+    </div>
+    <div style="overflow-x:auto;-webkit-overflow-scrolling:touch"><table class="summary-table">
+        <tr><th>Term</th><th>Easy Definition</th><th>المصطلح</th></tr>
+        <tr><td>Software Testing</td><td>Checking software works correctly</td><td>اختبار البرمجيات</td></tr>
+        <tr><td>Verification</td><td>Are we building the product RIGHT?</td><td>تحقق</td></tr>
+        <tr><td>Validation</td><td>Are we building the RIGHT product?</td><td>مصادقة</td></tr>
+        <tr><td>Error</td><td>Human mistake (developer writes wrong code)</td><td>خطأ بشري</td></tr>
+        <tr><td>Defect (Bug)</td><td>Problem found in the code</td><td>خلل برمجي</td></tr>
+        <tr><td>Failure</td><td>System does not work correctly</td><td>فشل</td></tr>
+        <tr><td>Unit Testing</td><td>Testing individual functions/modules</td><td>اختبار وحدات</td></tr>
+        <tr><td>Integration Testing</td><td>Testing how modules work together</td><td>اختبار تكاملي</td></tr>
+        <tr><td>System Testing</td><td>Testing the complete system</td><td>اختبار نظام</td></tr>
+        <tr><td>Acceptance Testing</td><td>Users check if system meets needs</td><td>اختبار قبول</td></tr>
+        <tr><td>Black Box Testing</td><td>Testing without seeing internal code</td><td>اختبار الصندوق الأسود</td></tr>
+        <tr><td>White Box Testing</td><td>Testing with knowledge of internal code</td><td>اختبار الصندوق الأبيض</td></tr>
+        <tr><td>Manual Testing</td><td>Humans run tests manually</td><td>اختبار يدوي</td></tr>
+        <tr><td>Automated Testing</td><td>Tools and scripts run tests</td><td>اختبار آلي</td></tr>
+        <tr><td>UAT</td><td>User Acceptance Testing (final user check)</td><td>اختبار قبول المستخدم</td></tr>
+    </table></div>
+
+    <!-- Lecture 7 -->
+    <div class="lec-header">
+        <h2>Lecture 7: Project Management</h2>
+        <div class="ar-title">المحاضرة 7: إدارة المشاريع</div>
+    </div>
+    <div style="overflow-x:auto;-webkit-overflow-scrolling:touch"><table class="summary-table">
+        <tr><th>Term</th><th>Easy Definition</th><th>المصطلح</th></tr>
+        <tr><td>Project Management</td><td>Planning and controlling software projects</td><td>إدارة مشاريع</td></tr>
+        <tr><td>Triple Constraint</td><td>Balance between Scope, Time, and Cost</td><td>القيود الثلاثية</td></tr>
+        <tr><td>Scope</td><td>What the project must deliver</td><td>نطاق</td></tr>
+        <tr><td>Initiation</td><td>Define goals and feasibility</td><td>بدء</td></tr>
+        <tr><td>Planning</td><td>Create detailed project plan</td><td>تخطيط</td></tr>
+        <tr><td>Execution</td><td>Build the software</td><td>تنفيذ</td></tr>
+        <tr><td>Monitoring</td><td>Track progress and adjust</td><td>مراقبة</td></tr>
+        <tr><td>Closure</td><td>Deliver product and review</td><td>إغلاق</td></tr>
+        <tr><td>Project Manager</td><td>Leads the project team</td><td>مدير مشروع</td></tr>
+        <tr><td>Stakeholder</td><td>Person with interest in project outcome</td><td>صاحب مصلحة</td></tr>
+        <tr><td>Risk Management</td><td>Identifying and preparing for problems</td><td>إدارة المخاطر</td></tr>
+    </table></div>
+
+    <!-- Lecture 8 -->
+    <div class="lec-header">
+        <h2>Lecture 8: Collaboration &amp; Communication</h2>
+        <div class="ar-title">المحاضرة 8: التعاون والتواصل</div>
+    </div>
+    <div style="overflow-x:auto;-webkit-overflow-scrolling:touch"><table class="summary-table">
+        <tr><th>Term</th><th>Easy Definition</th><th>المصطلح</th></tr>
+        <tr><td>Communication</td><td>Sharing information clearly</td><td>تواصل</td></tr>
+        <tr><td>Collaboration</td><td>Working together toward shared goal</td><td>تعاون</td></tr>
+        <tr><td>Formal Communication</td><td>Official, structured information exchange</td><td>تواصل رسمي</td></tr>
+        <tr><td>Informal Communication</td><td>Casual, unstructured exchange</td><td>تواصل غير رسمي</td></tr>
+        <tr><td>Synchronous</td><td>Real-time communication (meetings, calls)</td><td>متزامن</td></tr>
+        <tr><td>Asynchronous</td><td>Delayed communication (emails, docs)</td><td>غير متزامن</td></tr>
+        <tr><td>Shared Understanding</td><td>Everyone knows goals and requirements</td><td>فهم مشترك</td></tr>
+        <tr><td>Role Distribution</td><td>Each person has clear responsibilities</td><td>توزيع الأدوار</td></tr>
+        <tr><td>Coordination</td><td>Managing task dependencies</td><td>تنسيق</td></tr>
+        <tr><td>Grapevine</td><td>Informal spread of information</td><td>إشاعة</td></tr>
+    </table></div>
+
+    <!-- Lecture 9 -->
+    <div class="lec-header">
+        <h2>Lecture 9: Case Studies</h2>
+        <div class="ar-title">المحاضرة 9: دراسات حالة</div>
+    </div>
+    <div style="overflow-x:auto;-webkit-overflow-scrolling:touch"><table class="summary-table">
+        <tr><th>Term</th><th>Easy Definition</th><th>المصطلح</th></tr>
+        <tr><td>E-Commerce Platform</td><td>Online system for buying/selling products</td><td>منصة تجارة إلكترونية</td></tr>
+        <tr><td>Ride-Sharing App</td><td>App connecting drivers with passengers</td><td>تطبيق مشاركة الركوب</td></tr>
+        <tr><td>Healthcare System</td><td>Software managing patient data and appointments</td><td>نظام رعاية صحية</td></tr>
+        <tr><td>Banking System</td><td>Secure software for financial transactions</td><td>نظام مصرفي</td></tr>
+        <tr><td>Social Media</td><td>Platform for sharing content and connecting</td><td>وسائل تواصل اجتماعي</td></tr>
+        <tr><td>Microservices</td><td>Architecture using small independent services</td><td>خدمات مصغرة</td></tr>
+        <tr><td>Scalability</td><td>System handles growing number of users</td><td>قابلية التوسع</td></tr>
+        <tr><td>APIs</td><td>Interfaces for software components to communicate</td><td>واجهات برمجة التطبيقات</td></tr>
+    </table></div>
+
+</div>
+<div class="footer">
+    <p>Quick Reference Summary &mdash; Software Development and Methodologies &mdash; COM 201 &copy; 2026</p>
+</div>
+
+
+
+<script>
+var G = {"failure":"فشل","error":"خطأ بشري","testing":"اختبار","shared understanding":"فهم مشترك","stakeholder":"صاحب مصلحة","project manager":"مدير مشروع","requirements engineering":"هندسة المتطلبات","closure":"إغلاق","system software":"برمجيات نظام","abstraction":"تجريد","role distribution":"توزيع الأدوار","system analyst":"محلل أنظمة","uat":"اختبار قبول المستخدم","automated testing":"اختبار آلي","security":"أمان","asynchronous":"غير متزامن","requirements analysis":"تحليل المتطلبات","system testing":"اختبار نظام","programming software":"برمجيات برمجة","triple constraint":"القيود الثلاثية","collaboration":"تعاون","maintenance":"صيانة","healthcare system":"نظام رعاية صحية","non-functional requirements":"متطلبات غير وظيفية","reliability":"موثوقية","application software":"برمجيات تطبيقية","integration testing":"اختبار تكاملي","hld (high-level design)":"تصميم عالي المستوى","analysis":"تحليل","microservices":"خدمات مصغرة","agile model":"نموذج رشيق","architecture design":"تصميم معماري","modularity":"نمطية","software testing":"اختبار البرمجيات","verification":"تحقق","project management":"إدارة مشاريع","reusability":"قابلية إعادة الاستخدام","scalability":"قابلية التوسع","error handling":"معالجة الأخطاء","specification":"تحديد","version control":"التحكم بالنسخ","comments":"تعليقات","usability":"سهولة الاستخدام","communication":"تواصل","coordination":"تنسيق","debugging":"تصحيح الأخطاء","unit testing":"اختبار وحدات","apis":"واجهات برمجة التطبيقات","e-commerce platform":"منصة تجارة إلكترونية","qa engineer":"مهندس ضمان الجودة","v-model":"نموذج V","management":"إدارة","banking system":"نظام مصرفي","coding standards":"معايير البرمجة","formal communication":"تواصل رسمي","data design":"تصميم البيانات","risk management":"إدارة المخاطر","meaningful names":"أسماء ذات معنى","sdlc":"دورة حياة البرمجيات","validation":"تحقق","code formatting":"تنسيق الكود","execution":"تنفيذ","efficiency":"كفاءة","waterfall model":"نموذج الشلال","planning":"تخطيط","elicitation":"استخراج","manual testing":"اختبار يدوي","modular programming":"برمجة نمطية","scope":"نطاق","monitoring":"مراقبة","software":"برمجيات","software design":"تصميم البرمجيات","defect (bug)":"خلل برمجي","social media":"وسائل تواصل اجتماعي","grapevine":"إشاعة","synchronous":"متزامن","srs":"وثيقة تحديد المتطلبات","interface design":"تصميم الواجهة","implementation":"تنفيذ","lld (low-level design)":"تصميم منخفض المستوى","white box testing":"اختبار الصندوق الأبيض","spiral model":"نموذج حلزوني","encapsulation":"تغليف","black box testing":"اختبار الصندوق الأسود","component design":"تصميم المكونات","system design":"تصميم النظام","maintainability":"قابلية الصيانة","deployment":"نشر","functional requirements":"متطلبات وظيفية","software developer":"مطور برمجيات","acceptance testing":"اختبار قبول","initiation":"بدء","ride-sharing app":"تطبيق مشاركة الركوب","informal communication":"تواصل غير رسمي"}
+;
+
+var translationCache = {};
+function translateText(text, callback) {
+  if (!text || text.trim().length === 0) { callback('(بدون نت)'); return; }
+  var key = text.toLowerCase().trim();
+  if (translationCache[key]) { callback(translationCache[key]); return; }
+  var xhr = new XMLHttpRequest();
+  xhr.open("GET", "https://api.mymemory.translated.net/get?q=" + encodeURIComponent(text) + "&langpair=en|ar", true);
+  xhr.onload = function() {
+    if (xhr.status === 200) {
+      try {
+        var resp = JSON.parse(xhr.responseText);
+        var result = resp.responseData.translatedText;
+        translationCache[key] = result;
+        callback(result);
+      } catch(e) { callback('(بدون نت)'); }
+    } else { callback('(بدون نت)'); }
+  };
+  xhr.onerror = function() { callback('(بدون نت)'); };
+  xhr.send();
+}
+
+// Position tooltip directly below the selected text's bounding box
+function posBelow(el, rect) {
+  if (!rect) { el.style.display = 'none'; return; }
+  var pw = window.innerWidth, ph = window.innerHeight;
+  var tw = Math.min(el.offsetWidth || 350, pw - 20);
+  var th = el.offsetHeight || 80;
+  var left = Math.max(5, Math.min(rect.left, pw - tw - 5));
+  var top;
+  // If room below selection
+  if (rect.bottom + th + 10 < ph) {
+    top = rect.bottom + 6;
+  } else {
+    // Place above selection
+    top = Math.max(4, rect.top - th - 6);
+  }
+  el.style.left = left + 'px';
+  el.style.top = top + 'px';
+  el.style.maxWidth = Math.min(480, pw - 20) + 'px';
+}
+
+// ===== Word Translation =====
+var wt = document.createElement('div');
+wt.style.cssText = 'position:fixed;display:none;background:#1e293b;color:#fff;padding:10px 16px;border-radius:10px;font-size:14px;z-index:9999;max-width:350px;box-shadow:0 4px 20px rgba(0,0,0,0.4);font-family:Inter,Cairo,sans-serif;line-height:1.6;';
+wt.innerHTML = '<div style="color:#94a3b8;font-size:11px;font-weight:600;">TRANSLATION <span id="wtl" style="display:none;color:#fde047;">loading...</span></div><div id="wtw" style="font-weight:700;"></div><div id="wta" style="color:#fbbf24;font-size:15px;font-family:Cairo;direction:rtl;text-align:right;"></div>';
+document.body.appendChild(wt);
+
+document.addEventListener('dblclick', function(e) {
+  var sel = window.getSelection();
+  var word = sel.toString().trim();
+  if (!word || !sel.rangeCount) return;
+  var rect = sel.getRangeAt(0).getBoundingClientRect();
+  document.getElementById('wtw').textContent = word;
+  var lower = word.toLowerCase();
+  if (GLOSSARY[lower]) {
+    document.getElementById('wta').textContent = GLOSSARY[lower];
+    document.getElementById('wtl').style.display = 'none';
+  } else {
+    document.getElementById('wtl').style.display = 'inline';
+    document.getElementById('wta').textContent = '';
+    translateText(word, function(t) {
+      document.getElementById('wta').textContent = t;
+      document.getElementById('wtl').style.display = 'none';
+    });
+  }
+  wt.style.display = 'block';
+  posBelow(wt, rect);
+});
+
+document.addEventListener('click', function(e) {
+  if (e.target !== wt) wt.style.display = 'none';
+});
+
+// Hide word tooltip on scroll
+window.addEventListener('scroll', function() { wt.style.display = 'none'; }, true);
+
+// ===== Sentence Translation =====
+var st = document.createElement('div');
+st.style.cssText = 'position:fixed;display:none;background:linear-gradient(135deg,#1e40af,#3b82f6);color:#fff;padding:14px 20px;border-radius:12px;font-size:14px;z-index:9998;max-width:480px;box-shadow:0 8px 30px rgba(0,0,0,0.3);font-family:Inter,Cairo,sans-serif;line-height:1.7;';
+st.innerHTML = '<div style="font-weight:700;margin-bottom:6px;">Translation <span id="stl" style="display:none;color:#fde047;">translating...</span></div><div id="str" style="font-family:Cairo;direction:rtl;text-align:right;font-size:15px;"></div><div id="sto" style="color:rgba(255,255,255,0.4);font-size:12px;margin-top:6px;font-style:italic;"></div>';
+document.body.appendChild(st);
+
+document.addEventListener('mouseup', function(e) {
+  setTimeout(function() {
+    var sel = window.getSelection();
+    var text = sel.toString().trim();
+    if (text.length > 3 && sel.rangeCount) {
+      var rect = sel.getRangeAt(0).getBoundingClientRect();
+      wt.style.display = 'none';
+      document.getElementById('sto').textContent = '"' + text.substring(0, 80) + (text.length > 80 ? '...' : '') + '"';
+      document.getElementById('stl').style.display = 'inline';
+      document.getElementById('str').textContent = '';
+      st.style.display = 'block';
+      posBelow(st, rect);
+      translateText(text, function(t) {
+        document.getElementById('str').textContent = t;
+        document.getElementById('stl').style.display = 'none';
+      });
+    } else {
+      st.style.display = 'none';
+    }
+  }, 200);
+});
+
+document.addEventListener('click', function(e) {
+  if (e.target !== st && !st.contains(e.target)) st.style.display = 'none';
+});
+
+// Hide sentence tooltip on scroll
+window.addEventListener('scroll', function() { st.style.display = 'none'; }, true);
+</script>
+
+<script>
+function setLang(lang) {
+  var body = document.body;
+  var html = document.documentElement;
+  var enBtn = document.getElementById('langEn');
+  var arBtn = document.getElementById('langAr');
+  if (lang === 'ar') {
+    body.setAttribute('data-lang', 'ar');
+    html.setAttribute('lang', 'ar');
+    html.setAttribute('dir', 'rtl');
+    if (enBtn) enBtn.style.background = 'transparent';
+    if (enBtn) enBtn.style.color = 'rgba(255,255,255,0.8)';
+    if (arBtn) arBtn.style.background = '#fff';
+    if (arBtn) arBtn.style.color = '#1e40af';
+    if (arBtn) arBtn.style.borderColor = '#fff';
+  } else {
+    body.setAttribute('data-lang', 'en');
+    html.setAttribute('lang', 'en');
+    html.setAttribute('dir', 'ltr');
+    if (enBtn) enBtn.style.background = '#fff';
+    if (enBtn) enBtn.style.color = '#1e40af';
+    if (enBtn) enBtn.style.borderColor = '#fff';
+    if (arBtn) arBtn.style.background = 'transparent';
+    if (arBtn) arBtn.style.color = 'rgba(255,255,255,0.8)';
+    if (arBtn) arBtn.style.borderColor = 'rgba(255,255,255,0.3)';
+  }
+  localStorage.setItem('swd_course_lang', lang);
+}
+var savedLang = localStorage.getItem('swd_course_lang');
+if (savedLang) setLang(savedLang);
+</script>
+<div id="transHint" style="position:fixed;bottom:100px;right:20px;z-index:999;background:#1e293b;color:#fff;padding:14px 20px;border-radius:14px;box-shadow:0 8px 30px rgba(0,0,0,0.3);max-width:280px;font-size:13px;line-height:1.6;opacity:0;transform:translateY(20px);transition:opacity 0.5s, transform 0.5s;pointer-events:none;">
+  <div style="font-weight:700;margin-bottom:4px;"><i class="fas fa-language" style="color:#fbbf24;"></i> <span data-en>Translation</span><span data-ar>ترجمة</span></div>
+  <span data-en>Double-click any word or select a sentence to translate</span>
+  <span data-ar>اضغط مرتين على كلمة أو اختر جملة للترجمة</span>
+</div>
+<script>setTimeout(function(){var h=document.getElementById('transHint');if(h)h.classList.add('visible');},2000);setTimeout(function(){var h=document.getElementById('transHint');if(h)h.classList.remove('visible');},7000);</script>
+</body>
+</html>

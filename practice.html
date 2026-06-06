@@ -1,0 +1,492 @@
+﻿<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Terminology Practice - COM 201</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300..700&family=Cairo:wght@300..700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+:root {
+  --primary: #1e40af; --primary-light: #2563eb; --primary-dark: #1e3a8a;
+  --success: #10b981; --danger: #ef4444; --warning: #f59e0b;
+  --bg: #f8fafc; --card: #ffffff; --text: #0f172a; --text-light: #475569;
+  --border: #e2e8f0; --radius: 14px;
+  --font-en: 'Inter', system-ui, sans-serif;
+  --font-ar: 'Cairo', system-ui, sans-serif;
+}
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--font-en); background: var(--bg); color: var(--text);
+  line-height: 1.6; padding-top: 68px; overflow-x: hidden;
+}
+body[data-lang="ar"] { font-family: var(--font-ar); }
+body[data-lang="ar"] i, body[data-lang="ar"] .fas, body[data-lang="ar"] .far, body[data-lang="ar"] .fab { transform: none !important; }
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 1000; height: 68px;
+  background: rgba(255,255,255,.88); backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--border);
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 32px; transition: background .3s;
+}
+.nav-brand { display: flex; align-items: center; gap: 10px; font-weight: 700; font-size: 1rem; color: var(--primary); }
+.nav-brand i { font-size: 1.25rem; }
+.nav-links { display: flex; align-items: center; gap: 20px; list-style: none; flex-wrap: wrap; }
+.nav-links a { text-decoration: none; color: var(--text-light); font-size: .88rem; font-weight: 500; transition: color .2s; }
+.nav-links a:hover { color: var(--primary-light); }
+.nav-links a.active { color: var(--primary); font-weight: 600; }
+.lang-btn {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 7px 16px; border-radius: 8px; border: 1px solid var(--border);
+  background: var(--card); cursor: pointer;
+  font-family: inherit; font-size: .82rem; font-weight: 600;
+  color: var(--primary); transition: all .2s;
+}
+.lang-btn:hover { border-color: var(--primary-light); background: #eff6ff; }
+.lang-btn i { font-size: .82rem; }
+body[data-lang="ar"] .nav-links { flex-direction: row; }
+
+.hero {
+  background: linear-gradient(135deg, var(--primary-dark), var(--primary-light));
+  color: #fff; padding: 48px 24px; text-align: center;
+}
+.hero h1 { font-size: 1.8rem; font-weight: 700; margin-bottom: 8px; }
+.hero p { opacity: .88; font-size: 1rem; }
+.stats-bar {
+  display: flex; justify-content: center; gap: 32px; margin-top: 20px; font-size: .9rem;
+}
+.stats-bar span { display: inline-flex; align-items: center; gap: 6px; }
+
+.container { max-width: 640px; margin: 0 auto; padding: 32px 20px; }
+.practice-card {
+  background: var(--card); border-radius: var(--radius);
+  box-shadow: 0 4px 6px rgba(0,0,0,.07); padding: 32px;
+  text-align: center;
+}
+.term-def {
+  font-size: 1.1rem; color: var(--text-light); margin-bottom: 24px;
+  padding: 16px; background: #f1f5f9; border-radius: 10px;
+  line-height: 1.7;
+}
+.term-input-wrap {
+  display: flex; gap: 12px; align-items: center; justify-content: center;
+  margin-bottom: 20px; flex-wrap: wrap;
+}
+.term-input {
+  font-family: var(--font-en); font-size: 1.3rem; font-weight: 600;
+  padding: 14px 20px; border: 3px solid var(--border); border-radius: 12px;
+  outline: none; width: 100%; max-width: 360px;
+  text-align: center; transition: border-color .3s;
+  background: var(--bg);
+}
+.term-input:focus { border-color: var(--primary-light); }
+.term-input.correct { border-color: var(--success); background: #ecfdf5; }
+.term-input.incorrect { border-color: var(--danger); background: #fef2f2; }
+.term-hint {
+  font-size: .85rem; color: var(--text-light);
+  margin-bottom: 16px;
+}
+.term-hint .hint-char { font-weight: 700; color: var(--primary); font-size: 1rem; }
+.feedback { font-size: 1.2rem; font-weight: 700; margin: 12px 0; min-height: 2em; }
+.feedback.correct { color: var(--success); }
+.feedback.incorrect { color: var(--danger); }
+.action-row { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; margin-top: 16px; }
+.btn {
+  padding: 10px 24px; border: none; border-radius: 10px; font-family: inherit;
+  font-size: .9rem; font-weight: 600; cursor: pointer; transition: all .2s;
+  display: inline-flex; align-items: center; gap: 6px;
+}
+.btn:active { transform: scale(.97); }
+.btn-primary { background: var(--primary-light); color: #fff; }
+.btn-primary:hover { background: var(--primary-dark); }
+.btn-success { background: var(--success); color: #fff; }
+.btn-success:hover { opacity: .9; }
+.btn-outline { background: transparent; color: var(--text-light); border: 2px solid var(--border); }
+.btn-outline:hover { border-color: var(--primary-light); color: var(--primary); }
+.btn-danger { background: var(--danger); color: #fff; }
+.btn-danger:hover { opacity: .9; }
+.progress-section { margin: 20px 0; }
+.progress-bar-bg { height: 8px; background: #e2e8f0; border-radius: 4px; overflow: hidden; }
+.progress-bar-fill { height: 100%; background: var(--primary-light); border-radius: 4px; transition: width .4s; }
+.progress-label { font-size: .85rem; color: var(--text-light); margin-bottom: 8px; }
+.result-stats { display: flex; gap: 24px; justify-content: center; margin: 20px 0; flex-wrap: wrap; }
+.stat-item { text-align: center; }
+.stat-item .num { font-size: 2rem; font-weight: 700; }
+.stat-item .label { font-size: .8rem; color: var(--text-light); }
+.term-list {
+  margin-top: 20px; text-align: left;
+}
+body[data-lang="ar"] .term-list { text-align: right; }
+.term-row {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 8px 14px; border-radius: 8px; margin-bottom: 4px;
+  background: #f8fafc; font-size: .9rem;
+}
+.term-row .en { font-weight: 600; flex: 1; }
+.term-row .ar { font-family: var(--font-ar); color: var(--text-light); flex: 1; direction: rtl; text-align: right; }
+.term-row .status { font-size: .8rem; font-weight: 700; }
+.term-row .status.correct { color: var(--success); }
+.term-row .status.incorrect { color: var(--danger); }
+.hidden { display: none !important; }
+@media (max-width: 600px) {
+  nav { padding: 0 16px; height:56px; }
+  .nav-links { gap: 10px; }
+  .container { padding: 20px 12px; }
+  .practice-card { padding: 20px; }
+  .term-input { font-size: 1.1rem; }
+  .stats-bar { gap: 16px; flex-wrap: wrap; }
+  body { padding-top: 56px; }
+}
+@media (max-width: 480px) {
+  nav { height: 50px; padding: 0 10px; }
+  body { padding-top: 50px; }
+  .nav-links { gap: 4px; }
+  .nav-links a { font-size: 0.75rem; }
+  .lang-btn { padding: 5px 8px; font-size: 0.72rem; }
+  .hero h1 { font-size: 1.3rem; }
+  .hero { padding: 32px 16px; }
+  .hero p { font-size: 0.85rem; }
+  .practice-card { padding: 16px; }
+  .term-def { font-size: 0.95rem; padding: 12px; }
+  .term-input { font-size: 1rem; padding: 10px 14px; }
+  .stat-item .num { font-size: 1.6rem; }
+  .result-stats { gap: 12px; }
+  .container { padding: 16px 10px; }
+}
+#transHint.visible { opacity: 1 !important; transform: translateY(0) !important; }
+</style>
+</head>
+<body data-lang="en">
+
+<nav>
+  <a href="index.html" class="nav-brand"><i class="fas fa-keyboard"></i> <span data-en>Terminology Practice</span><span data-ar>تدريب المصطلحات</span></a>
+  <ul class="nav-links">
+    <li><a href="index.html"><i class="fas fa-home"></i> <span data-en>Home</span><span data-ar>الرئيسية</span></a></li>
+    <li><a href="explanation.html"><i class="fas fa-book"></i> <span data-en>Explanation</span><span data-ar>الشرح</span></a></li>
+    <li><a href="quiz.html"><i class="fas fa-question-circle"></i> <span data-en>Quiz</span><span data-ar>اختبار</span></a></li>
+    <li><a href="summary.html"><i class="fas fa-file-alt"></i> <span data-en>Summary</span><span data-ar>ملخص</span></a></li>
+    <li>
+      <button class="lang-btn" id="langToggle" aria-label="Toggle language">
+        <i class="fas fa-globe"></i>
+        <span id="langLabel">العربية</span>
+      </button>
+    </li>
+  </ul>
+</nav>
+<div style="background:#1e3a8a;padding:6px 24px;display:flex;justify-content:flex-end;align-items:center;gap:8px;">
+  <button class="lang-btn" id="langEn" onclick="setLang('en')" style="display:inline-flex;align-items:center;gap:5px;padding:5px 14px;border-radius:20px;border:1px solid rgba(255,255,255,0.3);background:transparent;color:rgba(255,255,255,0.8);font-size:12px;font-weight:600;cursor:pointer;font-family:inherit;transition:all .2s;">
+    <i class="fas fa-language"></i> English
+  </button>
+  <button class="lang-btn" id="langAr" onclick="setLang('ar')" style="display:inline-flex;align-items:center;gap:5px;padding:5px 14px;border-radius:20px;border:1px solid rgba(255,255,255,0.3);background:transparent;color:rgba(255,255,255,0.8);font-size:12px;font-weight:600;cursor:pointer;font-family:inherit;transition:all .2s;">
+    <i class="fas fa-language"></i> العربية
+  </button>
+</div>
+
+<section class="hero">
+  <h1><i class="fas fa-keyboard"></i> <span data-en>Terminology Typing Practice</span><span data-ar>تدريب كتابة المصطلحات</span></h1>
+  <p><span data-en>Read the definition, type the correct term, and press Enter to check</span><span data-ar>اقرأ التعريف، اكتب المصطلح الصحيح، واضغط Enter للتحقق</span></p>
+  <div class="stats-bar">
+    <span><i class="fas fa-layer-group"></i> <span id="progressStat">0 / 0</span></span>
+    <span><i class="fas fa-check-circle" style="color:#10b981"></i> <span id="correctStat">0</span></span>
+    <span><i class="fas fa-times-circle" style="color:#ef4444"></i> <span id="incorrectStat">0</span></span>
+  </div>
+</section>
+
+<div class="container">
+  <div class="practice-card" id="practiceView">
+    <div class="term-def" id="termDef">Loading...</div>
+    <div class="progress-section">
+      <div class="progress-label" id="progressLabel"><span data-en>Progress</span><span data-ar>التقدم</span></div>
+      <div class="progress-bar-bg"><div class="progress-bar-fill" id="progressFill" style="width:0%"></div></div>
+    </div>
+    <div class="term-input-wrap">
+      <input type="text" class="term-input" id="termInput" placeholder="Type the term..." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+    </div>
+    <div class="term-hint" id="termHintWrap">
+      <span data-en>Hint: <span class="hint-char" id="hintChar">_</span>...</span>
+      <span data-ar>تلميح: <span class="hint-char" id="hintCharAr">_</span>...</span>
+    </div>
+    <div class="feedback" id="feedback"></div>
+    <div class="action-row">
+      <button class="btn btn-success" id="checkBtn" onclick="checkAnswer()">
+        <i class="fas fa-check"></i> <span data-en>Check</span><span data-ar>تحقق</span>
+      </button>
+      <button class="btn btn-outline" onclick="skipTerm()">
+        <i class="fas fa-forward"></i> <span data-en>Skip</span><span data-ar>تخطي</span>
+      </button>
+    </div>
+  </div>
+
+  <div class="practice-card hidden" id="resultsView">
+    <h2 style="margin-bottom:12px;"><i class="fas fa-trophy" style="color:#f59e0b;"></i> <span data-en>Practice Complete!</span><span data-ar>اكتمل التدريب!</span></h2>
+    <div class="result-stats">
+      <div class="stat-item"><div class="num" id="finalCorrect">0</div><div class="label"><span data-en>Correct</span><span data-ar>صحيح</span></div></div>
+      <div class="stat-item"><div class="num" id="finalIncorrect">0</div><div class="label"><span data-en>Incorrect</span><span data-ar>خطأ</span></div></div>
+      <div class="stat-item"><div class="num" id="finalAccuracy">0%</div><div class="label"><span data-en>Accuracy</span><span data-ar>دقة</span></div></div>
+    </div>
+    <div id="resultMessage" style="font-size:1.1rem;margin-bottom:16px;color:var(--text-light);"></div>
+    <div class="term-list" id="termResultList"></div>
+    <div class="action-row">
+      <button class="btn btn-primary" onclick="restartPractice()"><i class="fas fa-redo"></i> <span data-en>Practice Again</span><span data-ar>تدرب مرة أخرى</span></button>
+      <button class="btn btn-outline" onclick="window.location.href='quiz.html'"><i class="fas fa-pencil-alt"></i> <span data-en>Take Quiz</span><span data-ar>اختبر نفسك</span></button>
+    </div>
+  </div>
+</div>
+
+<script>
+var TERMS = [{"en": "Software", "ar": "برمجيات", "def": "Collection of programs & instructions that tell a computer what to do"}, {"en": "System Software", "ar": "برمجيات نظام", "def": "Manages computer hardware (OS, drivers)"}, {"en": "Application Software", "ar": "برمجيات تطبيقية", "def": "Programs for end users (Word, Photoshop)"}, {"en": "Programming Software", "ar": "برمجيات برمجة", "def": "Tools for developers (IDEs, compilers)"}, {"en": "SDLC", "ar": "دورة حياة البرمجيات", "def": "Structured process to build software (plan → code → test → maintain)"}, {"en": "Software Developer", "ar": "مطور برمجيات", "def": "Person who writes code"}, {"en": "System Analyst", "ar": "محلل أنظمة", "def": "Person who studies user needs"}, {"en": "QA Engineer", "ar": "مهندس ضمان الجودة", "def": "Person who tests software quality"}, {"en": "Reliability", "ar": "موثوقية", "def": "Software works correctly every time"}, {"en": "Efficiency", "ar": "كفاءة", "def": "Software uses resources wisely"}, {"en": "Security", "ar": "أمان", "def": "Software protects data from threats"}, {"en": "Scalability", "ar": "قابلية التوسع", "def": "Software can handle more users over time"}, {"en": "Maintainability", "ar": "قابلية الصيانة", "def": "Software is easy to update and fix"}, {"en": "Usability", "ar": "سهولة الاستخدام", "def": "Software is easy to learn and use"}, {"en": "SDLC", "ar": "دورة حياة البرمجيات", "def": "Step-by-step process to develop software"}, {"en": "Planning", "ar": "تخطيط", "def": "Define goals, costs, timeline, feasibility"}, {"en": "Requirements Analysis", "ar": "تحليل المتطلبات", "def": "Gather and document user needs"}, {"en": "System Design", "ar": "تصميم النظام", "def": "Plan architecture, database, interface"}, {"en": "Implementation", "ar": "تنفيذ", "def": "Write the actual code"}, {"en": "Testing", "ar": "اختبار", "def": "Find and fix bugs"}, {"en": "Deployment", "ar": "نشر", "def": "Release software to users"}, {"en": "Maintenance", "ar": "صيانة", "def": "Update and improve software after release"}, {"en": "Waterfall Model", "ar": "نموذج الشلال", "def": "Linear model where each phase finishes before next starts"}, {"en": "Agile Model", "ar": "نموذج رشيق", "def": "Flexible model with short cycles called sprints"}, {"en": "Spiral Model", "ar": "نموذج حلزوني", "def": "Risk-driven model combining waterfall + prototyping"}, {"en": "V-Model", "ar": "نموذج V", "def": "Testing runs in parallel with development"}, {"en": "Requirements Engineering", "ar": "هندسة المتطلبات", "def": "Process of defining what software should do"}, {"en": "Elicitation", "ar": "استخراج", "def": "Collecting requirements from stakeholders"}, {"en": "Analysis", "ar": "تحليل", "def": "Checking requirements for conflicts and priorities"}, {"en": "Specification", "ar": "تحديد", "def": "Writing requirements in SRS document"}, {"en": "Validation", "ar": "تحقق", "def": "Checking requirements are correct and complete"}, {"en": "Management", "ar": "إدارة", "def": "Handling changes to requirements"}, {"en": "Functional Requirements", "ar": "متطلبات وظيفية", "def": "What the system should DO (e.g., &ldquo;user can login&rdquo;)"}, {"en": "Non-Functional Requirements", "ar": "متطلبات غير وظيفية", "def": "HOW the system performs (speed, security)"}, {"en": "SRS", "ar": "وثيقة تحديد المتطلبات", "def": "Software Requirements Specification document"}, {"en": "Software Design", "ar": "تصميم البرمجيات", "def": "Creating system architecture before coding"}, {"en": "HLD (High-Level Design)", "ar": "تصميم عالي المستوى", "def": "Overall system structure and modules"}, {"en": "LLD (Low-Level Design)", "ar": "تصميم منخفض المستوى", "def": "Detailed design of each module"}, {"en": "Modularity", "ar": "نمطية", "def": "Dividing system into small independent parts"}, {"en": "Abstraction", "ar": "تجريد", "def": "Hiding complex details, showing only essentials"}, {"en": "Encapsulation", "ar": "تغليف", "def": "Protecting data inside objects"}, {"en": "Reusability", "ar": "قابلية إعادة الاستخدام", "def": "Using same components in different systems"}, {"en": "Architecture Design", "ar": "تصميم معماري", "def": "Defines overall structure"}, {"en": "Data Design", "ar": "تصميم البيانات", "def": "Defines database and data structures"}, {"en": "Interface Design", "ar": "تصميم الواجهة", "def": "How users/systems interact with software"}, {"en": "Component Design", "ar": "تصميم المكونات", "def": "Internal structure of modules"}, {"en": "Implementation", "ar": "تنفيذ", "def": "Converting design into actual code"}, {"en": "Coding Standards", "ar": "معايير البرمجة", "def": "Rules for writing clean, consistent code"}, {"en": "Meaningful Names", "ar": "أسماء ذات معنى", "def": "Variables describe their purpose clearly"}, {"en": "Code Formatting", "ar": "تنسيق الكود", "def": "Proper indentation and spacing"}, {"en": "Comments", "ar": "تعليقات", "def": "Text explaining what code does"}, {"en": "Modular Programming", "ar": "برمجة نمطية", "def": "Breaking code into small functions"}, {"en": "Error Handling", "ar": "معالجة الأخطاء", "def": "Code that manages failures gracefully"}, {"en": "Debugging", "ar": "تصحيح الأخطاء", "def": "Finding and removing errors in code"}, {"en": "Version Control", "ar": "التحكم بالنسخ", "def": "Tracking code changes (Git)"}, {"en": "Software Testing", "ar": "اختبار البرمجيات", "def": "Checking software works correctly"}, {"en": "Verification", "ar": "تحقق", "def": "Are we building the product RIGHT?"}, {"en": "Validation", "ar": "مصادقة", "def": "Are we building the RIGHT product?"}, {"en": "Error", "ar": "خطأ بشري", "def": "Human mistake (developer writes wrong code)"}, {"en": "Defect (Bug)", "ar": "خلل برمجي", "def": "Problem found in the code"}, {"en": "Failure", "ar": "فشل", "def": "System does not work correctly"}, {"en": "Unit Testing", "ar": "اختبار وحدات", "def": "Testing individual functions/modules"}, {"en": "Integration Testing", "ar": "اختبار تكاملي", "def": "Testing how modules work together"}, {"en": "System Testing", "ar": "اختبار نظام", "def": "Testing the complete system"}, {"en": "Acceptance Testing", "ar": "اختبار قبول", "def": "Users check if system meets needs"}, {"en": "Black Box Testing", "ar": "اختبار الصندوق الأسود", "def": "Testing without seeing internal code"}, {"en": "White Box Testing", "ar": "اختبار الصندوق الأبيض", "def": "Testing with knowledge of internal code"}, {"en": "Manual Testing", "ar": "اختبار يدوي", "def": "Humans run tests manually"}, {"en": "Automated Testing", "ar": "اختبار آلي", "def": "Tools and scripts run tests"}, {"en": "UAT", "ar": "اختبار قبول المستخدم", "def": "User Acceptance Testing (final user check)"}, {"en": "Project Management", "ar": "إدارة مشاريع", "def": "Planning and controlling software projects"}, {"en": "Triple Constraint", "ar": "القيود الثلاثية", "def": "Balance between Scope, Time, and Cost"}, {"en": "Scope", "ar": "نطاق", "def": "What the project must deliver"}, {"en": "Initiation", "ar": "بدء", "def": "Define goals and feasibility"}, {"en": "Planning", "ar": "تخطيط", "def": "Create detailed project plan"}, {"en": "Execution", "ar": "تنفيذ", "def": "Build the software"}, {"en": "Monitoring", "ar": "مراقبة", "def": "Track progress and adjust"}, {"en": "Closure", "ar": "إغلاق", "def": "Deliver product and review"}, {"en": "Project Manager", "ar": "مدير مشروع", "def": "Leads the project team"}, {"en": "Stakeholder", "ar": "صاحب مصلحة", "def": "Person with interest in project outcome"}, {"en": "Risk Management", "ar": "إدارة المخاطر", "def": "Identifying and preparing for problems"}, {"en": "Communication", "ar": "تواصل", "def": "Sharing information clearly"}, {"en": "Collaboration", "ar": "تعاون", "def": "Working together toward shared goal"}, {"en": "Formal Communication", "ar": "تواصل رسمي", "def": "Official, structured information exchange"}, {"en": "Informal Communication", "ar": "تواصل غير رسمي", "def": "Casual, unstructured exchange"}, {"en": "Synchronous", "ar": "متزامن", "def": "Real-time communication (meetings, calls)"}, {"en": "Asynchronous", "ar": "غير متزامن", "def": "Delayed communication (emails, docs)"}, {"en": "Shared Understanding", "ar": "فهم مشترك", "def": "Everyone knows goals and requirements"}, {"en": "Role Distribution", "ar": "توزيع الأدوار", "def": "Each person has clear responsibilities"}, {"en": "Coordination", "ar": "تنسيق", "def": "Managing task dependencies"}, {"en": "Grapevine", "ar": "إشاعة", "def": "Informal spread of information"}, {"en": "E-Commerce Platform", "ar": "منصة تجارة إلكترونية", "def": "Online system for buying/selling products"}, {"en": "Ride-Sharing App", "ar": "تطبيق مشاركة الركوب", "def": "App connecting drivers with passengers"}, {"en": "Healthcare System", "ar": "نظام رعاية صحية", "def": "Software managing patient data and appointments"}, {"en": "Banking System", "ar": "نظام مصرفي", "def": "Secure software for financial transactions"}, {"en": "Social Media", "ar": "وسائل تواصل اجتماعي", "def": "Platform for sharing content and connecting"}, {"en": "Microservices", "ar": "خدمات مصغرة", "def": "Architecture using small independent services"}, {"en": "Scalability", "ar": "قابلية التوسع", "def": "System handles growing number of users"}, {"en": "APIs", "ar": "واجهات برمجة التطبيقات", "def": "Interfaces for software components to communicate"}];
+
+var practiceState = { terms: [], index: 0, correct: 0, incorrect: 0, results: {} };
+
+function shuffle(arr) {
+  for (var i = arr.length - 1; i > 0; i--) {
+    var j = Math.floor(Math.random() * (i + 1));
+    var temp = arr[i]; arr[i] = arr[j]; arr[j] = temp;
+  }
+  return arr;
+}
+
+function initPractice() {
+  startPractice();
+}
+
+function startPractice() {
+  practiceState.terms = shuffle(TERMS.map(function(t) { return Object.assign({}, t); }));
+  practiceState.index = 0;
+  practiceState.correct = 0;
+  practiceState.incorrect = 0;
+  practiceState.results = {};
+  document.getElementById('resultsView').classList.add('hidden');
+  document.getElementById('practiceView').classList.remove('hidden');
+  showTerm();
+}
+
+function showTerm() {
+  if (practiceState.index >= practiceState.terms.length) {
+    showResults();
+    return;
+  }
+  var term = practiceState.terms[practiceState.index];
+  var isAr = document.body.getAttribute('data-lang') === 'ar';
+  var input = document.getElementById('termInput');
+  input.value = '';
+  input.className = 'term-input';
+  input.focus();
+  document.getElementById('feedback').textContent = '';
+  document.getElementById('feedback').className = 'feedback';
+
+  var def = term.def;
+  var displayHtml = isAr ? '<strong style="font-family:Cairo;font-size:1.4rem;display:block;margin-bottom:8px;">' + term.ar + '</strong><span style="color:#64748b;font-size:.9rem;">' + def + '</span>' : def;
+  document.getElementById('termDef').innerHTML = displayHtml;
+
+  var firstChar = term.en.charAt(0);
+  document.getElementById('hintChar').textContent = firstChar;
+  document.getElementById('hintCharAr').textContent = firstChar;
+
+  var total = practiceState.terms.length;
+  var done = Object.keys(practiceState.results).length;
+  var pct = Math.round((done / total) * 100);
+  document.getElementById('progressFill').style.width = pct + '%';
+  document.getElementById('progressLabel').textContent = (isAr ? '\u0627\u0644\u062a\u0642\u062f\u0645: ' : 'Progress: ') + done + ' / ' + total;
+  document.getElementById('progressStat').textContent = done + ' / ' + total;
+  document.getElementById('correctStat').textContent = practiceState.correct;
+  document.getElementById('incorrectStat').textContent = practiceState.incorrect;
+}
+
+function checkAnswer() {
+  if (practiceState.index >= practiceState.terms.length) return;
+  var term = practiceState.terms[practiceState.index];
+  var input = document.getElementById('termInput');
+  var answer = input.value.trim().toLowerCase();
+  var correct = term.en.toLowerCase();
+  var feedback = document.getElementById('feedback');
+
+  if (!answer) { input.focus(); return; }
+
+  if (practiceState.results[practiceState.index] !== undefined) {
+    practiceState.index++;
+    showTerm();
+    return;
+  }
+
+  if (answer === correct) {
+    practiceState.correct++;
+    input.className = 'term-input correct';
+    feedback.textContent = '✓ ' + (document.body.getAttribute('data-lang') === 'ar' ? '\u0625\u062c\u0627\u0628\u0629 \u0635\u062d\u064a\u062d\u0629!' : 'Correct!');
+    feedback.className = 'feedback correct';
+    practiceState.results[practiceState.index] = true;
+  } else {
+    practiceState.incorrect++;
+    input.className = 'term-input incorrect';
+    feedback.textContent = '✗ ' + (document.body.getAttribute('data-lang') === 'ar' ? '\u0627\u0644\u0635\u062d\u064a\u062d: ' : 'Correct: ') + term.en;
+    feedback.className = 'feedback incorrect';
+    practiceState.results[practiceState.index] = false;
+  }
+
+  document.getElementById('correctStat').textContent = practiceState.correct;
+  document.getElementById('incorrectStat').textContent = practiceState.incorrect;
+
+  setTimeout(function() {
+    practiceState.index++;
+    showTerm();
+  }, 1200);
+}
+
+function skipTerm() {
+  if (practiceState.index >= practiceState.terms.length) return;
+  var term = practiceState.terms[practiceState.index];
+  if (practiceState.results[practiceState.index] === undefined) {
+    practiceState.incorrect++;
+    practiceState.results[practiceState.index] = false;
+    document.getElementById('incorrectStat').textContent = practiceState.incorrect;
+  }
+  practiceState.index++;
+  showTerm();
+}
+
+function showResults() {
+  document.getElementById('practiceView').classList.add('hidden');
+  document.getElementById('resultsView').classList.remove('hidden');
+  var total = practiceState.terms.length;
+  document.getElementById('finalCorrect').textContent = practiceState.correct;
+  document.getElementById('finalIncorrect').textContent = practiceState.incorrect;
+  var pct = total > 0 ? Math.round((practiceState.correct / total) * 100) : 0;
+  document.getElementById('finalAccuracy').textContent = pct + '%';
+  var isAr = document.body.getAttribute('data-lang') === 'ar';
+  var msg;
+  if (pct >= 90) msg = isAr ? '\u0645\u0645\u062a\u0627\u0632! \u0623\u062f\u0627\u0621 \u0631\u0627\u0626\u0639 \u0641\u064a \u0627\u0644\u0645\u0635\u0637\u0644\u062d\u0627\u062a!' : 'Excellent! Great terminology knowledge!';
+  else if (pct >= 70) msg = isAr ? '\u062c\u064a\u062f \u062c\u062f\u0627\u064b! \u062a\u062f\u0631\u0628 \u0623\u0643\u062b\u0631.' : 'Very good! Keep practicing.';
+  else msg = isAr ? '\u062d\u0627\u0648\u0644 \u0645\u0631\u0629 \u0623\u062e\u0631\u0649 \u0644\u062a\u062d\u0633\u064a\u0646 \u0645\u0639\u0631\u0641\u062a\u0643 \u0628\u0627\u0644\u0645\u0635\u0637\u0644\u062d\u0627\u062a.' : 'Try again to improve your terminology knowledge.';
+  document.getElementById('resultMessage').textContent = msg;
+
+  var list = document.getElementById('termResultList');
+  list.innerHTML = '<h3 style="margin-bottom:12px;font-size:1.1rem;">' + (isAr ? '\u0627\u0644\u0645\u0635\u0637\u0644\u062d\u0627\u062a' : 'Terms') + '</h3>';
+  practiceState.terms.forEach(function(t, i) {
+    var row = document.createElement('div');
+    row.className = 'term-row';
+    var status = practiceState.results[i];
+    var statusHtml = status === undefined ? '<span class="status" style="color:#94a3b8;">-</span>' :
+      (status ? '<span class="status correct">✓</span>' : '<span class="status incorrect">✗</span>');
+    row.innerHTML = '<span class="en">' + t.en + '</span><span class="ar">' + t.ar + '</span>' + statusHtml;
+    list.appendChild(row);
+  });
+}
+
+function restartPractice() {
+  initPractice();
+}
+
+// Single setLang for both nav toggle and lang bar
+function setLang(lang) {
+  var body = document.body;
+  var html = document.documentElement;
+  var langLabel = document.getElementById('langLabel');
+  var enBtn = document.getElementById('langEn');
+  var arBtn = document.getElementById('langAr');
+
+  if (lang === 'ar') {
+    body.setAttribute('data-lang', 'ar');
+    html.setAttribute('lang', 'ar');
+    html.setAttribute('dir', 'rtl');
+    if (langLabel) langLabel.textContent = 'English';
+    if (enBtn) { enBtn.style.background = 'transparent'; enBtn.style.color = 'rgba(255,255,255,0.8)'; }
+    if (arBtn) { arBtn.style.background = '#fff'; arBtn.style.color = '#1e40af'; arBtn.style.borderColor = '#fff'; }
+  } else {
+    body.setAttribute('data-lang', 'en');
+    html.setAttribute('lang', 'en');
+    html.setAttribute('dir', 'ltr');
+    if (langLabel) langLabel.textContent = '\u0627\u0644\u0639\u0631\u0628\u064a\u0629';
+    if (enBtn) { enBtn.style.background = '#fff'; enBtn.style.color = '#1e40af'; enBtn.style.borderColor = '#fff'; }
+    if (arBtn) { arBtn.style.background = 'transparent'; arBtn.style.color = 'rgba(255,255,255,0.8)'; arBtn.style.borderColor = 'rgba(255,255,255,0.3)'; }
+  }
+  localStorage.setItem('swd_course_lang', lang);
+  if (typeof showTerm === 'function') showTerm();
+}
+
+(function() {
+  var saved = localStorage.getItem('swd_course_lang');
+  if (saved === 'ar') setLang('ar');
+  var langToggle = document.getElementById('langToggle');
+  if (langToggle) {
+    langToggle.addEventListener('click', function() {
+      var next = document.body.getAttribute('data-lang') === 'ar' ? 'en' : 'ar';
+      setLang(next);
+    });
+  }
+})();
+
+// Enter key to check
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Enter') {
+    var input = document.getElementById('termInput');
+    if (input && document.activeElement === input && !document.getElementById('resultsView').classList.contains('hidden')) {
+      return;
+    }
+    if (input && document.activeElement === input) {
+      checkAnswer();
+    }
+  }
+});
+
+initPractice();
+
+// ===== Translation: double-click word, select sentence =====
+var G = {"failure":"فشل","error":"خطأ بشري","testing":"اختبار","shared understanding":"فهم مشترك","stakeholder":"صاحب مصلحة","project manager":"مدير مشروع","requirements engineering":"هندسة المتطلبات","closure":"إغلاق","system software":"برمجيات نظام","abstraction":"تجريد","role distribution":"توزيع الأدوار","system analyst":"محلل أنظمة","uat":"اختبار قبول المستخدم","automated testing":"اختبار آلي","security":"أمان","asynchronous":"غير متزامن","requirements analysis":"تحليل المتطلبات","system testing":"اختبار نظام","programming software":"برمجيات برمجة","triple constraint":"القيود الثلاثية","collaboration":"تعاون","maintenance":"صيانة","healthcare system":"نظام رعاية صحية","non-functional requirements":"متطلبات غير وظيفية","reliability":"موثوقية","application software":"برمجيات تطبيقية","integration testing":"اختبار تكاملي","hld (high-level design)":"تصميم عالي المستوى","analysis":"تحليل","microservices":"خدمات مصغرة","agile model":"نموذج رشيق","architecture design":"تصميم معماري","modularity":"نمطية","software testing":"اختبار البرمجيات","verification":"تحقق","project management":"إدارة مشاريع","reusability":"قابلية إعادة الاستخدام","scalability":"قابلية التوسع","error handling":"معالجة الأخطاء","specification":"تحديد","version control":"التحكم بالنسخ","comments":"تعليقات","usability":"سهولة الاستخدام","communication":"تواصل","coordination":"تنسيق","debugging":"تصحيح الأخطاء","unit testing":"اختبار وحدات","apis":"واجهات برمجة التطبيقات","e-commerce platform":"منصة تجارة إلكترونية","qa engineer":"مهندس ضمان الجودة","v-model":"نموذج V","management":"إدارة","banking system":"نظام مصرفي","coding standards":"معايير البرمجة","formal communication":"تواصل رسمي","data design":"تصميم البيانات","risk management":"إدارة المخاطر","meaningful names":"أسماء ذات معنى","sdlc":"دورة حياة البرمجيات","validation":"تحقق","code formatting":"تنسيق الكود","execution":"تنفيذ","efficiency":"كفاءة","waterfall model":"نموذج الشلال","planning":"تخطيط","elicitation":"استخراج","manual testing":"اختبار يدوي","modular programming":"برمجة نمطية","scope":"نطاق","monitoring":"مراقبة","software":"برمجيات","software design":"تصميم البرمجيات","defect (bug)":"خلل برمجي","social media":"وسائل تواصل اجتماعي","grapevine":"إشاعة","synchronous":"متزامن","srs":"وثيقة تحديد المتطلبات","interface design":"تصميم الواجهة","implementation":"تنفيذ","lld (low-level design)":"تصميم منخفض المستوى","white box testing":"اختبار الصندوق الأبيض","spiral model":"نموذج حلزوني","encapsulation":"تغليف","black box testing":"اختبار الصندوق الأسود","component design":"تصميم المكونات","system design":"تصميم النظام","maintainability":"قابلية الصيانة","deployment":"نشر","functional requirements":"متطلبات وظيفية","software developer":"مطور برمجيات","acceptance testing":"اختبار قبول","initiation":"بدء","ride-sharing app":"تطبيق مشاركة الركوب","informal communication":"تواصل غير رسمي"}
+;
+(function(){
+function p(el,r){var pw=window.innerWidth;el.style.left=Math.max(4,Math.min(r.left,pw-320))+'px';el.style.top=(r.bottom+10<window.innerHeight?r.bottom:r.top-50)+'px';}
+var wt=document.createElement('div');wt.innerHTML='<div style="color:#94a3b8;font-size:11px;font-weight:600;">TRANSLATION <span id="wl" style="display:none;color:#fde047;">...</span></div><div id="ww" style="font-weight:700;"></div><div id="wa" style="color:#fbbf24;font-size:15px;font-family:Cairo;direction:rtl;text-align:right;"></div>';
+wt.style.cssText='position:fixed;display:none;background:#1e293b;color:#fff;padding:10px 16px;border-radius:10px;z-index:9999;max-width:350px;box-shadow:0 4px 20px rgba(0,0,0,0.4);font-family:Inter,Cairo,sans-serif;line-height:1.6;';
+document.body.appendChild(wt);
+document.addEventListener('dblclick',function(e){
+  var s=window.getSelection(),w=s.toString().trim();
+  if(!w||!s.rangeCount)return;
+  var r=s.getRangeAt(0).getBoundingClientRect();
+  document.getElementById('ww').textContent=w;
+  var l=w.toLowerCase();
+  if(G[l]){document.getElementById('wa').textContent=G[l];document.getElementById('wl').style.display='none';}
+  else{
+    document.getElementById('wl').style.display='inline';document.getElementById('wa').textContent='';
+    var x=new XMLHttpRequest();
+    var pair=/[\u0600-\u06FF]/.test(w)?'ar|en':'en|ar';x.open("GET","https://api.mymemory.translated.net/get?q="+encodeURIComponent(w)+"&langpair="+pair,true);
+    x.onload=function(){if(x.status===200)try{document.getElementById('wa').textContent=JSON.parse(x.responseText).responseData.translatedText}catch(e){}document.getElementById('wl').style.display='none';};
+    x.onerror=function(){document.getElementById('wa').textContent='(بدون نت)';document.getElementById('wl').style.display='none';};x.send();
+  }
+  wt.style.display='block';p(wt,r);
+});
+var st=document.createElement('div');
+st.innerHTML='<div style="font-weight:700;margin-bottom:4px;">Translation <span id="sl" style="display:none;color:#fde047;">translating...</span></div><div id="sr" style="font-family:Cairo;direction:rtl;text-align:right;font-size:15px;"></div><div id="so" style="color:rgba(255,255,255,0.4);font-size:11px;margin-top:4px;font-style:italic;"></div>';
+st.style.cssText='position:fixed;display:none;background:linear-gradient(135deg,#1e40af,#3b82f6);color:#fff;padding:12px 18px;border-radius:12px;z-index:9998;max-width:450px;box-shadow:0 8px 30px rgba(0,0,0,0.3);font-family:Inter,Cairo,sans-serif;line-height:1.7;';
+document.body.appendChild(st);
+document.addEventListener('mouseup',function(e){
+  setTimeout(function(){
+    var s=window.getSelection(),t=s.toString().trim();
+    if(t.length>3&&s.rangeCount){
+      var r=s.getRangeAt(0).getBoundingClientRect();
+      wt.style.display='none';
+      document.getElementById('so').textContent='"'+t.substring(0,60)+(t.length>60?'...':'')+'"';
+      document.getElementById('sl').style.display='inline';document.getElementById('sr').textContent='';
+      st.style.display='block';p(st,r);
+      var x=new XMLHttpRequest();
+      var pair=/[\u0600-\u06FF]/.test(t)?'ar|en':'en|ar';x.open("GET","https://api.mymemory.translated.net/get?q="+encodeURIComponent(t)+"&langpair="+pair,true);
+      x.onload=function(){if(x.status===200)try{document.getElementById('sr').textContent=JSON.parse(x.responseText).responseData.translatedText}catch(e){}document.getElementById('sl').style.display='none';};
+      x.onerror=function(){document.getElementById('sr').textContent='(بدون نت)';document.getElementById('sl').style.display='none';};x.send();
+    }else{st.style.display='none';}
+  },300);
+});
+document.addEventListener('click',function(e){if(e.target!==wt&&!wt.contains(e.target))wt.style.display='none';if(e.target!==st&&!st.contains(e.target))st.style.display='none';});
+window.addEventListener('scroll',function(){wt.style.display='none';st.style.display='none';},true);
+})();
+</script>
+
+<div id="transHint" style="position:fixed;bottom:100px;right:20px;z-index:999;background:#1e293b;color:#fff;padding:14px 20px;border-radius:14px;box-shadow:0 8px 30px rgba(0,0,0,0.3);max-width:280px;font-size:13px;line-height:1.6;opacity:0;transform:translateY(20px);transition:opacity 0.5s, transform 0.5s;pointer-events:none;">
+  <div style="font-weight:700;margin-bottom:4px;"><i class="fas fa-language" style="color:#fbbf24;"></i> <span data-en>Translation</span><span data-ar>ترجمة</span></div>
+  <span data-en>Double-click any word or select a sentence to translate</span>
+  <span data-ar>اضغط مرتين على كلمة أو اختر جملة للترجمة</span>
+</div>
+<script>setTimeout(function(){var h=document.getElementById('transHint');if(h)h.classList.add('visible');},2000);setTimeout(function(){var h=document.getElementById('transHint');if(h)h.classList.remove('visible');},7000);</script>
+</body>
+</html>
